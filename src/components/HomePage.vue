@@ -9,9 +9,10 @@ export default {
 <template>
   <div>
     <h1>Game Title</h1>
-    <button>Play</button>
+    <button><router-link to="level1">Play</router-link></button>
     <button>Levels</button>
     <button>Settings</button>
+    <router-view></router-view>
   </div>
 </template>
 

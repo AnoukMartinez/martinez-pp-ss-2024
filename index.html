@@ -13,8 +13,9 @@
       import { createApp } from 'vue';
       import App from './src/App.vue';
       import './src/style.css';
+      import router from "./src/router/index.ts";
 
-      const app = createApp(App).mount('#app');
+      const app = createApp(App).use(router).mount('#app');
 
       export default app;
     </script>

@@ -1,11 +1,22 @@
 <script setup lang="ts">
-// import HomePage from './components/HomePage.vue';
-import LevelView from './components/LevelView.vue';
 </script>
 
 <template>
-  <!-- <HomePage /> -->
-  <LevelView />
+  <div class="wrapper">
+    <router-view></router-view>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+#wrapper {
+  height: 100%;
+  width: 100%;
+  border:solid 1px green;
+}
+</style>

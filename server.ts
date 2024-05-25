@@ -1,6 +1,7 @@
 
+// This server can be ignored for now as this file won't be used until the actual deployment
+
 import { Application, Router } from "https://deno.land/x/oak@v16.0.0/mod.ts";
-import { join } from "https://deno.land/std@0.59.0/path/posix.ts";
 
 const app = new Application();
 const router = new Router();
