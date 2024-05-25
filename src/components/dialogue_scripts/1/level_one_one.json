@@ -1,0 +1,11 @@
+{
+  "1_1_line_1": {
+    "content": "This is a dialogue line from a JSON."
+  },
+  "1_1_line_2": {
+    "content": "And another line from a JSON."
+  },
+  "1_1_line_3": {
+    "content": "Yes, I suppose this appears to work just fine."
+  }
+}
