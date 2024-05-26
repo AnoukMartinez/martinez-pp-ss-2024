@@ -19,24 +19,25 @@ const handleValueChange = (newValue : boolean) => {
 </script>
 
 <template>
-  <div class="h-screen flex flex-col border-2">
-    <div class="w-full h-16 bg-green-500">
-      Top Bar Placeholder
+  <div class="h-screen flex flex-row">
+    <div class="h-full w-48 bg-green-500">
+      Top Bar
     </div>
     
-    <div class="flex flex-row flex-grow">
+    <div class="flex flex-col flex-grow">
       <div class="flex-grow border-r-2">
         Picture Placeholder
+        {{ monitoredValue }}
       </div>
-      
-      <div class="w-1/4 border-l-2 p-4 bg-slate-500 h-full">
-        <Console msg="git add" @update:value="handleValueChange"/>
-      </div>
+      <div class="h-1/3 p-4 bg-yellow-200">
+        <DialogueBox :dialogue_lines="dialogue_lines" />
+      </div>  
     </div>
     
-    <div class="h-1/3 border-t-2 p-4 bg-yellow-200">
-      <DialogueBox :dialogue_lines="dialogue_lines" />
-    </div>
+    
+    <div class="w-1/4 p-4 bg-slate-500 h-full">
+        <Console msg="git add" @update:value="handleValueChange"/>
+      </div>
   </div>
 </template>
 
