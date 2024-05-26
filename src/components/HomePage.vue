@@ -7,18 +7,16 @@ export default {
 </script>
 
 <template>
-  <div>
-    <h1>Game Title</h1>
-    <router-link to="level1"><button>Play</button></router-link>
-    <router-link to="levels"><button>Levels</button></router-link>
-    <button>Settings</button>
+  <div class="border-2 min-h-screen flex flex-col items-center justify-center">
+    <h1 class="mb-8 text-8xl text-red-500 font-extrabold">Game Title</h1>
+    <div class="flex flex-col w-60">
+      <router-link to="level1"><button class="bg-black text-white py-2 px-6 mb-2 rounded-lg w-full">Play</button></router-link>
+      <router-link to="levels"><button class="bg-black text-white py-2 px-6 mb-2 rounded-lg w-full">Levels</button></router-link>
+      <router-link to="levels"><button class="bg-black text-white py-2 px-6 mb-2 rounded-lg w-full">Settings</button></router-link>
+    </div>
     <router-view></router-view>
   </div>
 </template>
 
 <style scoped>
-button {
-  width: 50%;
-  margin: 10px;
-}
 </style>
