@@ -9,8 +9,8 @@ export default {
 <template>
   <div>
     <h1>Game Title</h1>
-    <button><router-link to="level1">Play</router-link></button>
-    <button>Levels</button>
+    <router-link to="level1"><button>Play</button></router-link>
+    <router-link to="levels"><button>Levels</button></router-link>
     <button>Settings</button>
     <router-view></router-view>
   </div>

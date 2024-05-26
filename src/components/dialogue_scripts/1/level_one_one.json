@@ -1,11 +1,14 @@
 {
+  "1_1_positive" : {
+    "content" : "Ziehe Daten aus Remote Repository..."
+  },
+  "1_1_negative" : {
+    "content" : "Noch nicht ganz. Beim pullen brauchst du keine zusätzlichen Argumente."
+  },
   "1_1_line_1": {
-    "content": "This is a dialogue line from a JSON."
+    "content": "Um den aktuellen Code aus dem Remote Repository zu ziehen führen wir git pull aus."
   },
   "1_1_line_2": {
-    "content": "And another line from a JSON."
-  },
-  "1_1_line_3": {
-    "content": "Yes, I suppose this appears to work just fine."
+    "content": "Versuche es einmal."
   }
 }
