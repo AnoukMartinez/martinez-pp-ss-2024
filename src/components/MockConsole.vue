@@ -23,15 +23,22 @@ export default {
 </script>
 
 <template>
-  <div>
-    <h1>Bitte tippe ein:</h1>
-    <h2>{{ msg }}</h2>
+  <div class="flex flex-col">
+    <div class="border-2 border-color-red">
+      Bitte gibe 
+      <h2>{{ msg }}</h2>
+    </div>
+
+    <div>
+      <input id="inputabove" v-model="input_value" />
+    </div>
+
+    <div>
+      <input type="submit" value="Enter" v-on:click="evaluateInput()" />
+    </div>
+
+    <h3>{{ result }}</h3>
   </div>
-
-  <input id="inputabove" v-model="input_value" />
-  <input type="submit" value="Enter" v-on:click="evaluateInput()" />
-
-  <h3>{{ result }}</h3>
 </template>
 
 <style scoped>

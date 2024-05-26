@@ -7,51 +7,17 @@ export default {
 </script>
 
 <template>
-    <section class="container">
-        <div class="level-select">
-            <button>Levels</button>
+    <div class="h-screen flex flex-col items-center m-8">
+        <div class="flex flex-row justify-center space-x-12 w-full">
+            <button class="bg-red-500 rounded-t-lg w-1/6">Levels</button>
+            <button class="bg-yellow-500 rounded-t-lg w-1/6">Tutorials</button>
         </div>
-        <div class="tutorial-select">
-            <button>Tutorials</button>
-        </div>
-    </section>
-<div class="wrapper">
-    
-    <div class="card">
-        <div>
             
+        <div class="flex flex-col border-2 w-1/2 h-full rounded-3xl items-center">
+                <router-link to="level1"><button>Play</button></router-link>
         </div>
-        <router-link to="level1"><button>Play</button></router-link>
-        <router-view></router-view>
     </div>
-</div>
 </template>
 
 <style scoped>
-.wrapper {
-    width:100vh;
-    height:100vh;
-    background-color: lightblue;
-    border-radius: 10%;
-    flex-direction: column;
-}
-
-.level-select {
-    width:50%;
-    margin-right:20%;
-    height: 100px;
-    background: lightblue;
-    float: left;
-}
-
-.tutorial-select {
-    margin-left:60%;
-    height: 100px;
-    background: black;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-}
 </style>

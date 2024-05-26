@@ -19,33 +19,26 @@ const handleValueChange = (newValue : boolean) => {
 </script>
 
 <template>
-  <div id="wrapper">
-    <div class="console">
-      <Console msg="git add" @update:value="handleValueChange"/>
-      <p>Value in app: {{ monitoredValue }}</p>
+  <div class="h-screen flex flex-col border-2">
+    <div class="w-full h-16 bg-green-500">
+      Top Bar Placeholder
     </div>
-  
-    <br>
-    <DialogueBox :dialogue_lines="dialogue_lines" />
+    
+    <div class="flex flex-row flex-grow">
+      <div class="flex-grow border-r-2">
+        Picture Placeholder
+      </div>
+      
+      <div class="w-1/4 border-l-2 p-4 bg-slate-500 h-full">
+        <Console msg="git add" @update:value="handleValueChange"/>
+      </div>
+    </div>
+    
+    <div class="h-1/3 border-t-2 p-4 bg-yellow-200">
+      <DialogueBox :dialogue_lines="dialogue_lines" />
+    </div>
   </div>
 </template>
 
 <style scoped>
-html, body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-}
-
-#wrapper {
-  height: 100%;
-  width: 100%;
-  border:solid 1px green;
-}
-
-.console {
-  top:0;
-  left:0;
-  border:solid 1px red;
-}
 </style>
