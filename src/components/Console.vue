@@ -6,9 +6,11 @@ const props = defineProps<{ msg: string }>()
 const inputValue = ref('')
 const output_lines = ref<string[]>([])
 const solution_given : boolean = ref(false)
+const emit = defineEmits(['correct-input-given'])
 
 const evaluateInput = () => {
   if (inputValue.value === props.msg) {
+    emit('correct-input-given')
     output_lines.value.push(`> ${inputValue.value} erfolgreich ausgeführt!`)
     solution_given.value = true;
   } else {
@@ -16,10 +18,10 @@ const evaluateInput = () => {
   }
 }
 
-const emit = defineEmits(['update:value'])
-watch(solution_given, (newValue) => {
-  emit('update:value', newValue)
-})
+// watch(solution_given, (newValue) => {
+//   emit('update:value', newValue)
+// })
+
 </script>
 
 <template>

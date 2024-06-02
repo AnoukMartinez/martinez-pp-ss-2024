@@ -10,8 +10,9 @@ const dialogueBoxRef = ref()
 const monitoredValue = ref(false)
 
 const emit = defineEmits(['solution-cracked'])
-const handleValueChange = (newValue : boolean) => {
-  monitoredValue.value = newValue
+
+function handleValueChange() {
+  monitoredValue.value = true
   emit('solution-cracked')
 
   if(dialogueBoxRef.value) {
@@ -45,7 +46,7 @@ export default {
     
     
     <div class="w-1/4 p-4 bg-slate-500 h-full">
-        <Console msg="git add" @update:value="handleValueChange"/>
+        <Console msg="git add" @correct-input-given="handleValueChange"/>
       </div>
   </div>
 </template>
