@@ -1,44 +1,28 @@
 <script setup lang="ts">
-import DialogueBox from '../components/DialogueBox.vue';
-import MockConsole from '../components/MockConsole.vue';
-import Console from '../components/Console.vue';
-import { dialogue_lines } from '../components/testdata/dialogueLines';
-import { ref } from 'vue';
+import LevelScreen from './LevelScreen.vue'
+import { Level } from './DialogueLine.ts'
+import { level_1_1, level_1_2, level_1_3 } from './testdata/levels.ts'
+import { ref } from 'vue'
+
+// const levels = [level_1_1, level_1_2, level_1_3]
+var currentIndex = ref(0)
+var levels = ref([level_1_1, level_1_2, level_1_3])
+
+const handleSolutionCracked = () => {
+  currentIndex.value++
+  console.log(`current level index updated: ${currentIndex}`)
+}
+
 </script>
 
 <script lang="ts">
 export default {
   name: 'LevelView',
 };
-
-const monitoredValue = ref(false)
-
-const handleValueChange = (newValue : boolean) => {
-  monitoredValue.value = newValue
-}
 </script>
 
 <template>
-  <div class="h-screen flex flex-row">
-    <div class="h-full w-48 bg-green-500">
-      Top Bar
-    </div>
-    
-    <div class="flex flex-col flex-grow">
-      <div class="flex-grow border-r-2">
-        Picture Placeholder
-        {{ monitoredValue }}
-      </div>
-      <div class="h-1/3 p-4 bg-yellow-200">
-        <DialogueBox :dialogue_lines="dialogue_lines" />
-      </div>  
-    </div>
-    
-    
-    <div class="w-1/4 p-4 bg-slate-500 h-full">
-        <Console msg="git add" @update:value="handleValueChange"/>
-      </div>
-  </div>
+  <LevelScreen :level="levels[currentIndex]" @solution-cracked="handleSolutionCracked" />
 </template>
 
 <style scoped>
