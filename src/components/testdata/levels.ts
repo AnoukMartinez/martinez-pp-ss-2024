@@ -9,7 +9,7 @@ const dialogue4 = new DialogueLine("Letzte Line von Aufgabe 1")
 
 const dialogue5 = new DialogueLine("Hier beginnt Aufgabe 2")
 const dialogue6 = new DialogueLine("Und weiter geht es mit Aufgabe 2")
-const dialogue7 = new DialogueLine("Unc noch eine Line")
+const dialogue7 = new DialogueLine("Und noch eine Line")
 const dialogue8 = new DialogueLine("Ich mache das nur so lang damit ich mal sehen kann")
 const dialogue9 = new DialogueLine("Wie das ganze in der Praxis aussehen wird")
 const dialogue10 = new DialogueLine("Und damit ist Aufgabe 2 zuende")

@@ -6,11 +6,17 @@ import { ref, defineProps, watch } from 'vue';
 import { Level } from '../components/DialogueLine.ts'
 
 const props = defineProps<{ level : Level }>()
+const dialogueBoxRef = ref()
+const monitoredValue = ref(false)
 
 const emit = defineEmits(['solution-cracked'])
 const handleValueChange = (newValue : boolean) => {
   monitoredValue.value = newValue
   emit('solution-cracked')
+
+  if(dialogueBoxRef.value) {
+    dialogueBoxRef.value.resetLineIndex()
+  }
 }
 </script>
 
@@ -18,8 +24,6 @@ const handleValueChange = (newValue : boolean) => {
 export default {
   name: 'LevelScreen',
 };
-
-const monitoredValue = ref(false)
 </script>
 
 <template>
@@ -35,7 +39,7 @@ const monitoredValue = ref(false)
         {{ props.level.main_chapter }}
       </div>
       <div class="h-1/3 p-4 bg-yellow-200">
-        <DialogueBox :dialogue_lines="props.level.dialogue_lines" />
+        <DialogueBox ref="dialogueBoxRef" :dialogue_lines="props.level.dialogue_lines" />
       </div>  
     </div>
     
