@@ -9,6 +9,7 @@ const solution_given : boolean = ref(false)
 const emit = defineEmits(['correct-input-given'])
 
 const evaluateInput = () => {
+  console.log(props.msg)
   if (inputValue.value === props.msg) {
     emit('correct-input-given')
     output_lines.value.push(`> ${inputValue.value} erfolgreich ausgeführt!`)
@@ -17,10 +18,6 @@ const evaluateInput = () => {
     output_lines.value.push('> ' + 'Nicht ganz. Denke daran dass du einige Dateien hinzufügen musst bevor du deinen commit machen kannst.')
   }
 }
-
-// watch(solution_given, (newValue) => {
-//   emit('update:value', newValue)
-// })
 
 </script>
 

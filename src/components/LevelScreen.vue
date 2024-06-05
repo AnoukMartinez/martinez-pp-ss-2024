@@ -35,9 +35,9 @@ export default {
     
     <div class="flex flex-col flex-grow">
       <div class="flex-grow border-r-2">
-        Picture Placeholder
-        {{ monitoredValue }}
-        {{ props.level.main_chapter }}
+        <div class="text-4xl font-bold text-red-600 ml-12 mt-12">
+          {{ props.level.main_chapter }}.{{ props.level.sub_chapter }}
+        </div>
       </div>
       <div class="h-1/3 p-4 bg-yellow-200">
         <DialogueBox ref="dialogueBoxRef" :dialogue_lines="props.level.dialogue_lines" />
@@ -46,7 +46,7 @@ export default {
     
     
     <div class="w-1/4 p-4 bg-slate-500 h-full">
-        <Console msg="git add" @correct-input-given="handleValueChange"/>
+        <Console :msg="props.level.title" @correct-input-given="handleValueChange"/>
       </div>
   </div>
 </template>

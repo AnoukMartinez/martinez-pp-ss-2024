@@ -18,7 +18,6 @@ const renderNextLine = () => {
 };
 
 const resetLineIndex = () => {
-  console.log("LINE INDEX HAS BEEN RESET");
   currentIndex.value = 0;
 };
 
@@ -29,8 +28,8 @@ defineExpose({
 </script>
 
 <template>
-  <div>
-    <button @click="renderNextLine">{{ props.dialogue_lines[currentIndex].content }}</button>
+  <div class="resize-none">
+    <button class="text-4xl mt-14" @click="renderNextLine">{{ props.dialogue_lines[currentIndex].content }}</button>
   </div>
 </template>
 

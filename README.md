@@ -1,21 +1,28 @@
-# Vite + Deno + Vue 3 + TypeScript
+# GitHub Lernsystem
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Das folgende Projekt wurde im Rahmen des Praxisprojektes Medieninformatik an der TH Köln erstellt.
+Im Rahmen des Projektes soll ein Lernsystem entworfen werden, dass mit Konzepten der Gamification und mithilfe von Storytelling das Lernen von Git und GitHub für Studierende erleichtern soll.
 
-## Recommended IDE Setup
+Dabei wird eine verschiedene Technologien wie Deno, Vue und Vite verwendet. Weitere Informationen zu dem verwendeten Technologien, sowie ein Guide zur Erweiterung des Systems finden sich im [Wiki des Repositories](https://github.com/).
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+## Problembeschreibung und Lösungsansatz
 
-## Type Support For `.vue` Imports in TS
+Besonders zu Beginn des Studiums fällt es vielen Studierenden der Informatik schwer, sich mit den Konzepten des Versionsverwaltungs Services GitHub auseinanderzusetzen.
+Mögliche Ursachen hierbei sind beispielsweise fehlende Motivation und Zeit, sich außerhalb der Vorlesungen mit dem Thema auseinanderzusetzen. Studierenden fehlt zudem der langfristige Lerneffekt, oder sie haben teilweise technische Probleme, etwa bei der Authentifizierung mit SSH Keys.
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+Ein Lösungsansatz hierbei ist ein Lernsystem speziell für Studierende, welches mit Hilfe von Gamification Elementen die Konzepte näher an die Zielgruppe bringen soll.
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+In mehreren Lektionen, die alle jeweils einen wichtigen Teil der Github Basics vermittelt, k önnen Studierende hierbei zun ̈achst abstrakter die Funktionsweise von Github durch eine geeignete Analogie verstehen. Zudem können sie selbst einmal den Ablauf eines typischen Commits durchspielen. Ziel ist es, der Zielgruppe verständlich die Basics der Lernplattform GitHub zu vermitteln. Damit sollen diese langfristig lernen, effektiv mit anderen Informatikern an einem Projekt zusammen zu arbeiten. Konzepte sollen auch auf andere Versionskontrollsysteme die Git nutzen anwendbar sein.
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+Im Rahmen des Lernsystems soll eine in sich geschlossene kleine Geschichte erzählt werden, die mit der letzten Lektion abschließt.
 
-## Running
+Ein detaillierteres Exposé findet sich ebenfalls im [Wiki des Repositories](https://github.com/).
+
+## Nutzung des Systems
+
+Momentan ist das Projekt noch in der Entwicklung. Folgendes ist eine Beschreibung aus der offiziellen ReadMe des Deno Vite Projektes.
+
+### Running
 
 You need to have Deno v1.28.0 or later installed to run this repo.
 
@@ -25,7 +32,7 @@ Start a dev server:
 $ deno task dev
 ```
 
-## Deploy
+### Deploy
 
 Build production assets:
 
@@ -33,9 +40,8 @@ Build production assets:
 $ deno task build
 ```
 
-## Caveats
+## Erweiterung des Systems
 
-Currently there's a caveat for Deno users:
+Alle Teile des Systems sollten frei verfügbar und zugänglich sein. Bei Bedarf kann sich jede Person die Interesse an dem Projekt hat die Dateien klonen, und selbstständig alle Teile des Projektes verändern, erweitern oder löschen.
 
-- peer dependencies need to be referenced in `vite.config.mts`. In this example
-  it is only `vue` package that needs to be referenced.
+Bei Fragen und Rückmeldungen kann man sich an meine [E-Mail](mailto:anouk_olivia_elsa.martinez_wieczorek@smail.th-koeln.de?subject=%5BGitHub%5D%20Praxissprojekt%20R%C3%BCckfrage) wenden.

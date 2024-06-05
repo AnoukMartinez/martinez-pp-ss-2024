@@ -4,13 +4,13 @@ import { Level } from './DialogueLine.ts'
 import { level_1_1, level_1_2, level_1_3 } from './testdata/levels.ts'
 import { ref } from 'vue'
 
-// const levels = [level_1_1, level_1_2, level_1_3]
 var currentIndex = ref(0)
 var levels = ref([level_1_1, level_1_2, level_1_3])
 
 const handleSolutionCracked = () => {
-  currentIndex.value++
-  console.log(`current level index updated: ${currentIndex}`)
+  if(currentIndex.value < levels.value.length - 1) {
+    currentIndex.value++
+  }
 }
 
 </script>

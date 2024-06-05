@@ -1,19 +1,12 @@
-export class DialogueLine {
-  content: string;
-
-  constructor(content: string) {
-    this.content = content;
-  }
+export interface DialogueLine {
+  content : string;
+  required_flag? : string;
 }
 
-export class Level {
-  main_chapter: number;
-  sub_chapter: number;
-  dialogue_lines: Array<DialogueLine>;
-
-  constructor(main_chapter: number, sub_chapter: number, dialogue_lines: Array<DialogueLine>) {
-    this.main_chapter = main_chapter;
-    this.sub_chapter = sub_chapter;
-    this.dialogue_lines = dialogue_lines;
-  }
+export interface Level {
+  main_chapter : number;
+  sub_chapter : number;
+  title : string;
+  dialogue_lines : Array<DialogueLine>;
+  flags : Array<string>;
 }
