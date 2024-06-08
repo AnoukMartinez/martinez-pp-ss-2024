@@ -4,6 +4,7 @@ import LevelView from '../components/LevelView.vue'
 import HomePage from '../components/HomePage.vue'
 import LevelSelect from '../components/LevelSelect.vue'
 import { pathMatch } from "https://deno.land/x/oak@v16.0.0/deps.ts";
+import { levels } from '../components/testdata/levels.ts'
 
 const routes = [
     {
@@ -12,17 +13,12 @@ const routes = [
         component: HomePage
     },
     {
-        path: "/level1",
-        name: "Level One",
-        component: LevelView
-    },
-    {
         path: "/levels",
         name: "Level Select",
         component: LevelSelect
     },
     {
-        path: "/levels/:id",
+        path: "/levels/:main/chapters/:sub",
         name: "Level",
         component: LevelView
     }

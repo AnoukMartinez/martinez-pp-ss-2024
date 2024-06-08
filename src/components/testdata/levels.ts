@@ -10,12 +10,16 @@ const dialogue6 : DialogueLine = { content : "Und weiter geht es mit Aufgabe 2" 
 const dialogue7 : DialogueLine = { content : "Hier bitte git add fleisch eingeben...", required_flag : FlagKeywords.GIT_ADD_FLEISCH}
 const dialogue8 : DialogueLine = { content : "Sehr gut! Fleisch wurde hinzugefügt." }
 const dialogue9 : DialogueLine = { content : "Jetzt bitte tomate hinzufügen.", required_flag : FlagKeywords.GIT_ADD_TOMATE }
-const dialogue10 : DialogueLine = { content : "Und damit ist die Tomate dabei, und Aufgabe 2 zuende." }
+const dialogue10 : DialogueLine = { content : "Und damit ist die Tomate dabei, und Aufgabe 2 zuende." } // Wird nicht mehr aufgerufen
 
 const dialogue11 : DialogueLine = { content : "Hier steht Aufgabe 3" }
 const dialogue12 : DialogueLine = { content : "Die letzte unserer Beispielaufgaben" }
 const dialogue13 : DialogueLine = { content : "Führe git status aus um die aufgabe zu beenden (platzhalter)", required_flag : FlagKeywords.GIT_STATUS }
 const dialogue14 : DialogueLine = { content : "Und das war es mit den Test Daten. Bald gehts weiter mit echten Daten." }
+
+const dialogue15 : DialogueLine = { content : "And now, for something completely different!" }
+const dialogue16 : DialogueLine = { content : "Nämlich einem völlig neuem Kapitel (2)." }
+const dialogue17 : DialogueLine = { content : "Jetzt geht es um branches.", required_flag : FlagKeywords.GIT_PULL }
 
 const final_message : DialogueLine = { content : "Das war's. Danke für's spielen!", required_flag : FlagKeywords.GIT_STATUS}
 
@@ -49,6 +53,15 @@ export const level_1_3 : Level = {
     backgrounds : ['../../assets/asset-placeholder-gitstatus.png']
 }
 
+export const level_2_1 : Level = {
+    main_chapter : 2,
+    sub_chapter : 1,
+    title : "BRANCHING",
+    dialogue_lines : [dialogue15, dialogue16, dialogue17],
+    flags : [flag4],
+    backgrounds : ['../../assets/asset-placeholder-gitstatus.png']
+}
+
 export const final_level : Level = {
     main_chapter : 1,
     sub_chapter : 4,
@@ -57,3 +70,5 @@ export const final_level : Level = {
     flags : [flag1],
     backgrounds : ['../../assets/asset-placeholder-gitstatus.png'] 
 }
+
+export const levels : Level[] = [level_1_1, level_1_2, level_1_3, level_2_1, final_level]
