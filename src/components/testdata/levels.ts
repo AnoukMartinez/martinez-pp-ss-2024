@@ -7,15 +7,17 @@ const dialogue4 : DialogueLine = { content : "Jetzt muss noch git status aufgeru
 
 const dialogue5 : DialogueLine = { content : "Hier beginnt Aufgabe 2" }
 const dialogue6 : DialogueLine = { content : "Und weiter geht es mit Aufgabe 2" }
-const dialogue7 : DialogueLine = { content : "Hier bitte git add fleisch eingeben..." }
-const dialogue8 : DialogueLine = { content : "Sehr gut! Fleisch wurde hinzugefügt.", required_flag : FlagKeywords.GIT_ADD_FLEISCH }
-const dialogue9 : DialogueLine = { content : "Jetzt bitte tomate hinzufügen." }
-const dialogue10 : DialogueLine = { content : "Und damit ist die Tomate dabei, und Aufgabe 2 zuende.", required_flag : FlagKeywords.GIT_ADD_TOMATE }
+const dialogue7 : DialogueLine = { content : "Hier bitte git add fleisch eingeben...", required_flag : FlagKeywords.GIT_ADD_FLEISCH}
+const dialogue8 : DialogueLine = { content : "Sehr gut! Fleisch wurde hinzugefügt." }
+const dialogue9 : DialogueLine = { content : "Jetzt bitte tomate hinzufügen.", required_flag : FlagKeywords.GIT_ADD_TOMATE }
+const dialogue10 : DialogueLine = { content : "Und damit ist die Tomate dabei, und Aufgabe 2 zuende." }
 
 const dialogue11 : DialogueLine = { content : "Hier steht Aufgabe 3" }
 const dialogue12 : DialogueLine = { content : "Die letzte unserer Beispielaufgaben" }
-const dialogue13 : DialogueLine = { content : "Führe git status aus um die aufgabe zu beenden (platzhalter)" }
-const dialogue14 : DialogueLine = { content : "Und das war es mit den Test Daten. Bald gehts weiter mit echten Daten.", required_flag : FlagKeywords.GIT_STATUS }
+const dialogue13 : DialogueLine = { content : "Führe git status aus um die aufgabe zu beenden (platzhalter)", required_flag : FlagKeywords.GIT_STATUS }
+const dialogue14 : DialogueLine = { content : "Und das war es mit den Test Daten. Bald gehts weiter mit echten Daten." }
+
+const final_message : DialogueLine = { content : "Das war's. Danke für's spielen!", required_flag : FlagKeywords.GIT_STATUS}
 
 const flag1 : Flag = { id : 0, keyword : FlagKeywords.GIT_PULL }
 const flag2 : Flag = { id : 0, keyword : FlagKeywords.GIT_ADD_FLEISCH }
@@ -45,4 +47,13 @@ export const level_1_3 : Level = {
     dialogue_lines : [dialogue11, dialogue12, dialogue13, dialogue14], 
     flags : [flag4],
     backgrounds : ['../../assets/asset-placeholder-gitstatus.png']
+}
+
+export const final_level : Level = {
+    main_chapter : 1,
+    sub_chapter : 4,
+    title : "GIT STATUS",
+    dialogue_lines : [final_message],
+    flags : [flag1],
+    backgrounds : ['../../assets/asset-placeholder-gitstatus.png'] 
 }

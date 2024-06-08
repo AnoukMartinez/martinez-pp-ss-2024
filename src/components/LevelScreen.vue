@@ -16,6 +16,10 @@ function handleValueChange() {
   lastSolvedFlag.value = props.level.flags[currentFlagIndex.value - 1].keyword
   console.log(lastSolvedFlag.value)
 
+  if(dialogueBoxRef.value.currentIndex < props.level.dialogue_lines.length) {
+    dialogueBoxRef.value.currentIndex++
+  }
+  
   // If all flags are triggered, progress to next level and reset the game state
   if(currentFlagIndex.value == props.level.flags.length) {
     emit('solution-cracked')

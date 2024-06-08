@@ -23,7 +23,6 @@ const renderNextLine = () => {
   if (current_line_flag == undefined) {
     currentIndex.value++;
   } else if(current_line_flag == props.lastSolvedFlag) {
-    // needs more logic on wether current keyword was solved yet
     currentIndex.value++;
   }
 };
@@ -34,6 +33,8 @@ const resetLineIndex = () => {
 
 defineExpose({
   resetLineIndex,
+  renderNextLine,
+  currentIndex
 });
 </script>
 
