@@ -34,7 +34,7 @@ export const level_1_1 : Level = {
     title : "GIT PULL", 
     dialogue_lines : [dialogue1, dialogue2, dialogue3, dialogue4], 
     flags : [flag1, flag4],
-    backgrounds : ['../../assets/asset-placeholder-gitpull.png']
+    backgrounds : ['/assets/asset-placeholder-gitpull.png']
 }
 export const level_1_2 : Level = { 
     main_chapter : 1, 
@@ -42,7 +42,7 @@ export const level_1_2 : Level = {
     title : "GIT ADD", 
     dialogue_lines : [dialogue5, dialogue6, dialogue7, dialogue8, dialogue9, dialogue10], 
     flags : [flag2, flag3],
-    backgrounds : ['../../assets/asset-placeholder-gitadd.png']
+    backgrounds : ['/assets/asset-placeholder-gitadd.png']
 }
 export const level_1_3 : Level = { 
     main_chapter : 1, 
@@ -50,7 +50,7 @@ export const level_1_3 : Level = {
     title : "GIT STATUS", 
     dialogue_lines : [dialogue11, dialogue12, dialogue13, dialogue14], 
     flags : [flag4],
-    backgrounds : ['../../assets/asset-placeholder-gitstatus.png']
+    backgrounds : ['/assets/asset-placeholder-gitstatus.png']
 }
 
 export const level_2_1 : Level = {
@@ -59,7 +59,7 @@ export const level_2_1 : Level = {
     title : "BRANCHING",
     dialogue_lines : [dialogue15, dialogue16, dialogue17],
     flags : [flag4],
-    backgrounds : ['../../assets/asset-placeholder-gitstatus.png']
+    backgrounds : ['/assets/asset-placeholder-gitstatus.png']
 }
 
 export const final_level : Level = {
@@ -68,7 +68,7 @@ export const final_level : Level = {
     title : "GIT STATUS",
     dialogue_lines : [final_message],
     flags : [flag1],
-    backgrounds : ['../../assets/asset-placeholder-gitstatus.png'] 
+    backgrounds : ['/assets/asset-placeholder-gitstatus.png'] 
 }
 
 export const levels : Level[] = [level_1_1, level_1_2, level_1_3, level_2_1, final_level]
