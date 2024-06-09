@@ -8,13 +8,14 @@ const props = defineProps<{ level : Level }>()
 const dialogueBoxRef = ref()
 const currentFlagIndex = ref(0)
 const lastSolvedFlag = ref(null)
+const inputRequired = ref(false)
+const inputColor = ref('black')
 
 const emit = defineEmits(['solution-cracked'])
 
 function handleValueChange() {
   currentFlagIndex.value = currentFlagIndex.value + 1
   lastSolvedFlag.value = props.level.flags[currentFlagIndex.value - 1].keyword
-  console.log(lastSolvedFlag.value)
 
   if(dialogueBoxRef.value.currentIndex < props.level.dialogue_lines.length) {
     dialogueBoxRef.value.currentIndex++
@@ -28,11 +29,24 @@ function handleValueChange() {
   }
 }
 
+function handleInputRequired() {
+  inputRequired.value = true
+}
+
+function handleNoInputRequired() {
+  inputRequired.value = false
+}
+
 const backgroundStyle = computed(() => {
   return {
     backgroundImage: `url(${props.level.backgrounds[0]})`,
   };
 });
+
+watch(inputRequired, (newVal) => {
+  inputColor.value = newVal ? 'red' : 'black'
+})
+
 </script>
 
 <script lang="ts">
@@ -53,13 +67,13 @@ export default {
         </div>
       </div>
       <div class="h-1/3 p-4 bg-yellow-200">
-        <DialogueBox ref="dialogueBoxRef" :dialogue_lines="props.level.dialogue_lines" :lastSolvedFlag="lastSolvedFlag" />
+        <DialogueBox ref="dialogueBoxRef" :dialogue_lines="props.level.dialogue_lines" :lastSolvedFlag="lastSolvedFlag" @input-required="handleInputRequired" @no-input-required="handleNoInputRequired" />
       </div>  
     </div>
     
     
     <div class="w-1/4 p-4 bg-slate-500 h-full">
-        <Console :title="props.level.title" :flagKeyword="props.level.flags[currentFlagIndex].keyword" @correct-input-given="handleValueChange" />
+        <Console :title="props.level.title" :flagKeyword="props.level.flags[currentFlagIndex].keyword" :inputColor="inputColor" @correct-input-given="handleValueChange" />
       </div>
   </div>
 </template>

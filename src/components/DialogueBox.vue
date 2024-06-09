@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref } from 'vue';
+import { defineProps, defineEmits, ref, watch } from 'vue';
 import { DialogueLine } from './DialogueLine';
 
 const props = defineProps({
@@ -9,6 +9,8 @@ const props = defineProps({
   },
   lastSolvedFlag: {},
 });
+
+const emit = defineEmits(['input-required', 'no-input-required'])
 
 const currentIndex = ref(0);
 
@@ -26,6 +28,16 @@ const renderNextLine = () => {
     currentIndex.value++;
   }
 };
+
+watch(currentIndex, (newIndex) => {
+  // Sende einen emit je nachdem ob in der Line eine Eingabe getätigt werden soll, oder nicht
+  const current_line_flag = props.dialogue_lines[newIndex]?.required_flag;
+  if (current_line_flag !== undefined && current_line_flag !== props.lastSolvedFlag) {
+    emit('input-required');
+  } else {
+    emit('no-input-required')
+  }
+});
 
 const resetLineIndex = () => {
   currentIndex.value = 0;
