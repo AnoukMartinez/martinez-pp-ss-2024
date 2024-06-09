@@ -15,26 +15,20 @@ const evaluateInput = () => {
     console.log(props.flagKeyword)
     output_lines.value.push('> ' + 'Nicht ganz. Denke daran dass du einige Dateien hinzufügen musst bevor du deinen commit machen kannst.')
   }
+  // Leert Eingabe nach jedem Versuch
+  inputValue.value = ''
 }
 
-const inputStyle = computed(() => {
-  if(props.inputRequired) {
-    return {
-      backgroundColor : 'red',
-
-    }
-  } else {
-    return {
-      backgroundColor : 'lightgray',
-      cursor: 'not-allowed',
-    }
+const handleSubmitByEnter = () => {
+  if (props.inputRequired) {
+    evaluateInput();
   }
-});
+}
 
-const submitStyle = computed(() => {
+const notAllowedStyle = computed(() => {
   if(!props.inputRequired) {
     return {
-      backgroundColor : 'lightgrey',
+      backgroundColor : 'lightgray',
       cursor: 'not-allowed',
     }
   }
@@ -63,8 +57,8 @@ watch(() => props.inputRequired, (newVal) => {
     </div>
 
     <div class="flex items-center flex-col">
-      <input class="w-full p-2 text-lg font-bold text-white rounded-lg" id="inputabove" v-model="inputValue" :style="inputStyle" :readonly="!props.inputRequired"/>
-      <input class="w-full p-2 mt-2 font-bold rounded-lg bg-blue-300 hover:bg-blue-500 active:bg-blue-600" type="submit" :value="props.inputRequired ? 'Eingabe Validieren' : 'Momentan keine Eingabe Nötig!'" @click="evaluateInput" :disabled="!props.inputRequired" :style="submitStyle"/>
+      <input class="w-full p-2 text-lg font-bold text-white rounded-lg bg-black" id="inputabove" v-model="inputValue" :style="notAllowedStyle" :readonly="!props.inputRequired" @keydown.enter.prevent="handleSubmitByEnter"/>
+      <input class="w-full p-2 mt-2 font-bold rounded-lg bg-blue-300 hover:bg-blue-500 active:bg-blue-600" type="submit" :value="props.inputRequired ? 'Eingabe Validieren' : 'Momentan keine Eingabe Nötig!'" @click="evaluateInput" :disabled="!props.inputRequired" :style="notAllowedStyle"/>
     </div>
 
   </div>
