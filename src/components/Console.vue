@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, defineProps, computed } from 'vue'
+import { ref, defineProps, computed, watch } from 'vue'
 
-const props = defineProps<{ title : string, flagKeyword : string, inputColor : string }>()
+const props = defineProps<{ title : string, flagKeyword : string, inputRequired : boolean }>()
 
 const inputValue = ref('')
 const output_lines = ref<string[]>([])
@@ -18,11 +18,33 @@ const evaluateInput = () => {
 }
 
 const inputStyle = computed(() => {
-  return {
-    backgroundColor : props.inputColor,
+  if(props.inputRequired) {
+    return {
+      backgroundColor : 'red',
+
+    }
+  } else {
+    return {
+      backgroundColor : 'lightgray',
+      cursor: 'not-allowed',
+    }
   }
 });
 
+const submitStyle = computed(() => {
+  if(!props.inputRequired) {
+    return {
+      backgroundColor : 'lightgrey',
+      cursor: 'not-allowed',
+    }
+  }
+});
+
+watch(() => props.inputRequired, (newVal) => {
+  if (!newVal) {
+    inputValue.value = ''
+  }
+})
 </script>
 
 <template>
@@ -41,8 +63,8 @@ const inputStyle = computed(() => {
     </div>
 
     <div class="flex items-center flex-col">
-      <input class="w-full p-2 text-lg font-bold text-white rounded-lg" id="inputabove" v-model="inputValue" :style="inputStyle"/>
-      <input class="w-full p-2 mt-2 font-bold rounded-lg bg-blue-300 hover:bg-blue-500 active:bg-blue-600" type="submit" value="Eingabe Validieren" @click="evaluateInput" />
+      <input class="w-full p-2 text-lg font-bold text-white rounded-lg" id="inputabove" v-model="inputValue" :style="inputStyle" :readonly="!props.inputRequired"/>
+      <input class="w-full p-2 mt-2 font-bold rounded-lg bg-blue-300 hover:bg-blue-500 active:bg-blue-600" type="submit" :value="props.inputRequired ? 'Eingabe Validieren' : 'Momentan keine Eingabe Nötig!'" @click="evaluateInput" :disabled="!props.inputRequired" :style="submitStyle"/>
     </div>
 
   </div>

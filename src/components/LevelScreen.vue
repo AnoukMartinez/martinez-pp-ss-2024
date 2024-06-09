@@ -9,7 +9,6 @@ const dialogueBoxRef = ref()
 const currentFlagIndex = ref(0)
 const lastSolvedFlag = ref(null)
 const inputRequired = ref(false)
-const inputColor = ref('black')
 
 const emit = defineEmits(['solution-cracked'])
 
@@ -44,7 +43,7 @@ const backgroundStyle = computed(() => {
 });
 
 watch(inputRequired, (newVal) => {
-  inputColor.value = newVal ? 'red' : 'black'
+  inputRequired.value = newVal
 })
 
 </script>
@@ -73,7 +72,7 @@ export default {
     
     
     <div class="w-1/4 p-4 bg-slate-500 h-full">
-        <Console :title="props.level.title" :flagKeyword="props.level.flags[currentFlagIndex].keyword" :inputColor="inputColor" @correct-input-given="handleValueChange" />
+        <Console :title="props.level.title" :flagKeyword="props.level.flags[currentFlagIndex].keyword" :inputRequired="inputRequired" @correct-input-given="handleValueChange" />
       </div>
   </div>
 </template>
