@@ -1,9 +1,10 @@
-import { Level, DialogueLine, Flag, FlagKeywords } from '../DialogueLine.ts'
+import { Level, DialogueLine, Flag, FlagKeywords, Preview } from '../DialogueLine.ts'
 
 const dialogue1 : DialogueLine = { content : "Wir sind in Level 1" }
 const dialogue2 : DialogueLine = { content : "Versuchen wir doch einmal git pull aufzurufen.", required_flag : FlagKeywords.GIT_PULL }
 const dialogue3 : DialogueLine = { content : "Wow, wir haben jetzt einen Burger!" }
 const dialogue4 : DialogueLine = { content : "Jetzt muss noch git status aufgerufen werden!", required_flag : FlagKeywords.GIT_STATUS }
+const dialogue44 : DialogueLine = { content : "Sehr gut!" }
 
 const dialogue5 : DialogueLine = { content : "Hier beginnt Aufgabe 2" }
 const dialogue6 : DialogueLine = { content : "Und weiter geht es mit Aufgabe 2" }
@@ -28,13 +29,16 @@ const flag2 : Flag = { id : 0, keyword : FlagKeywords.GIT_ADD_FLEISCH }
 const flag3 : Flag = { id : 0, keyword : FlagKeywords.GIT_ADD_TOMATE }
 const flag4 : Flag = { id : 0, keyword : FlagKeywords.GIT_STATUS }
 
+const preview_1_1 : Preview = { description : "Ein erstes Level dass erklärt, wie man Daten zieht.", thumbnail_img_path : '/assets/asset-placeholder-gitpull.png' }
+
 export const level_1_1 : Level = { 
     main_chapter : 1, 
     sub_chapter : 1, 
     title : "GIT PULL", 
-    dialogue_lines : [dialogue1, dialogue2, dialogue3, dialogue4], 
+    dialogue_lines : [dialogue1, dialogue2, dialogue3, dialogue4, dialogue44], 
     flags : [flag1, flag4],
-    backgrounds : ['/assets/asset-placeholder-gitpull.png']
+    backgrounds : ['/assets/asset-placeholder-gitpull.png', '/assets/asset-placeholder-gitadd.png'],
+    preview: preview_1_1
 }
 export const level_1_2 : Level = { 
     main_chapter : 1, 
@@ -42,7 +46,8 @@ export const level_1_2 : Level = {
     title : "GIT ADD", 
     dialogue_lines : [dialogue5, dialogue6, dialogue7, dialogue8, dialogue9, dialogue10], 
     flags : [flag2, flag3],
-    backgrounds : ['/assets/asset-placeholder-gitadd.png']
+    backgrounds : ['/assets/asset-placeholder-gitadd.png', '/assets/asset-placeholder-gitadd.png'],
+    preview : preview_1_1
 }
 export const level_1_3 : Level = { 
     main_chapter : 1, 
@@ -50,7 +55,8 @@ export const level_1_3 : Level = {
     title : "GIT STATUS", 
     dialogue_lines : [dialogue11, dialogue12, dialogue13, dialogue14], 
     flags : [flag4],
-    backgrounds : ['/assets/asset-placeholder-gitstatus.png']
+    backgrounds : ['/assets/asset-placeholder-gitstatus.png'],
+    preview : preview_1_1
 }
 
 export const level_2_1 : Level = {
@@ -59,7 +65,8 @@ export const level_2_1 : Level = {
     title : "BRANCHING",
     dialogue_lines : [dialogue15, dialogue16, dialogue17],
     flags : [flag4],
-    backgrounds : ['/assets/asset-placeholder-gitstatus.png']
+    backgrounds : ['/assets/asset-placeholder-gitstatus.png'],
+    preview : preview_1_1
 }
 
 export const final_level : Level = {
@@ -68,7 +75,8 @@ export const final_level : Level = {
     title : "GIT STATUS",
     dialogue_lines : [final_message],
     flags : [flag1],
-    backgrounds : ['/assets/asset-placeholder-gitstatus.png'] 
+    backgrounds : ['/assets/asset-placeholder-gitstatus.png'],
+    preview : preview_1_1
 }
 
 export const levels : Level[] = [level_1_1, level_1_2, level_1_3, level_2_1, final_level]

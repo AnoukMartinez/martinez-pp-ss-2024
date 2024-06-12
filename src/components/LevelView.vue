@@ -14,11 +14,13 @@ const paramChapter = ref<number | null>(null);
 const currentIndex = ref(0)
 
 function handleSolutionCracked() {
-  var nextLevel = levels[currentIndex.value + 1].main_chapter
-  var nextChapter = levels[currentIndex.value + 1].sub_chapter
   if(currentIndex.value < levels.length - 1) {
+    var nextLevel = levels[currentIndex.value + 1].main_chapter
+    var nextChapter = levels[currentIndex.value + 1].sub_chapter
     router.push(`/levels/${nextLevel}/chapters/${nextChapter}`)
     currentIndex.value++
+  } else {
+    console.log("Das war das letzte Level! Danke für's Spielen.")
   }
 }
 

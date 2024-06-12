@@ -10,13 +10,14 @@ const props = defineProps({
   lastSolvedFlag: {},
 });
 
-const emit = defineEmits(['input-required', 'no-input-required'])
+const emit = defineEmits(['input-required', 'no-input-required', 'all-lines-read'])
 
 const currentIndex = ref(0);
 
 const renderNextLine = () => {
   // If line index is greater than number of lines, keep current line
   if(currentIndex.value >= props.dialogue_lines.length - 1) {
+    emit('all-lines-read')
     return
   }
 

@@ -1,0 +1,29 @@
+{
+    "chapter_1" : {
+        "main_chapter" : 2,
+        "sub_chapter" : 1,
+        "title" : "",
+        "dialogue_lines" : [
+            {
+                "content" : "",
+                "required_flag" : "hallo welt"
+            },
+            {
+                "content" : ""
+            }
+        ],
+        "flags" : [
+            {
+                "id" : 0,
+                "keyword" : "hallo welt"
+            }
+        ],
+        "backgrounds" : [
+            ""
+        ],
+        "preview" : {
+            "description" : "",
+            "thumbnail_img_path" : ""
+        }
+    }
+}

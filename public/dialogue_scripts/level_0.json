@@ -1,0 +1,30 @@
+{
+    "chapter_1" : {
+        "main_chapter" : 0,
+        "sub_chapter" : 1,
+        "title" : "Tutorial",
+        "dialogue_lines" : [
+            {
+                "content" : "test Line",
+                "flag" : null
+            },
+            {
+                "content" : "Tutorial Line 2",
+                "flag" : "hallo welt"
+            }
+        ],
+        "flags" : [
+            {
+                "id" : 0,
+                "keyword" : "hallo welt"
+            }
+        ],
+        "backgrounds" : [
+            "/assets/asset-placeholder-gitpull.png', '/assets/asset-placeholder-gitadd.png",
+            "/assets/asset-placeholder-gitpull.png', '/assets/asset-placeholder-gitadd.png"
+        ],
+        "preview" : {
+            "description" : "Ein kleines Tutorial, dass dem Spieler Steuerungen beibringen soll."
+        }
+    }
+}
