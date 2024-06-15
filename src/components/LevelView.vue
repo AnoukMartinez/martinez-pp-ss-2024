@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import LevelScreen from './LevelScreen.vue'
 import { Level } from './DialogueLine.ts'
-import { levels } from './testdata/levels.ts'
+import { levels } from './testdata/levelObjects.ts'
 import { onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router';
 
@@ -30,6 +30,7 @@ onMounted(() => {
 
   const matchesParameters = (level) => level.main_chapter === paramLevel.value && level.sub_chapter === paramChapter.value;
   currentIndex.value = levels.findIndex(matchesParameters);
+
   if(currentIndex.value == -1) {
     // Falls Level nicht gefunden wird rufe Platzhalter Seite, TODO
   }

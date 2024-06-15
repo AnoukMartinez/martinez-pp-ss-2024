@@ -19,8 +19,6 @@ function handleValueChange() {
     lastSolvedFlag.value = props.level.flags[currentFlagIndex.value]?.keyword;
     currentFlagIndex.value += 1
   }
-  
-  // lastSolvedFlag.value = props.level.flags[currentFlagIndex.value - 1].keyword
 
   if(dialogueBoxRef.value.currentIndex < props.level.dialogue_lines.length) {
     dialogueBoxRef.value.currentIndex++
@@ -75,7 +73,9 @@ export default {
 
 <template>
   <div class="h-screen flex flex-row">
-    <Sidebar />
+    <div>
+      <Sidebar />
+    </div>
     
     <div class="flex flex-col flex-grow" :style="backgroundStyle">
       <div class="flex-grow">
@@ -83,15 +83,15 @@ export default {
           {{ props.level.main_chapter }}.{{ props.level.sub_chapter }}
         </div>
       </div>
-      <div class="h-1/3 p-4 bg-yellow-200">
+      <div class="h-1/3 bg-yellow-200">
         <DialogueBox ref="dialogueBoxRef" :dialogue_lines="props.level.dialogue_lines" :lastSolvedFlag="lastSolvedFlag" @input-required="handleInputRequired" @no-input-required="handleNoInputRequired" @all-lines-read="handleAllDialogueLinesRead"/>
       </div>  
     </div>
     
     
-    <div class="w-1/4 p-4 bg-slate-500 h-full">
-        <Console :title="props.level.title" :flagKeyword="props.level.flags[currentFlagIndex].keyword" :inputRequired="inputRequired" @correct-input-given="handleValueChange" />
-      </div>
+    <div class="w-1/4 p-4 bg-slate-500 h-full shrink-0">
+      <Console :title="props.level.title" :flagKeyword="props.level.flags[currentFlagIndex].keyword" :inputRequired="inputRequired" @correct-input-given="handleValueChange" />
+    </div>
   </div>
 </template>
 

@@ -24,9 +24,21 @@ export default {
     <div class="bg-red-300 h-24 sm:h-32 md:h-40 lg:h-48 xl:h-56 w-11/12 mx-auto my-6 rounded flex items-center justify-center">
         <button class="w-full h-full flex items-center justify-between m-4">
             <div class="w-1/6 h-5/6" :style="backgroundStyle"></div>
-            <div class="text-4xl">
+            <div class="flex flex-row">
+              <div class="flex flex-col">
+                <div>
+                  {{ props.level.title }}
+                </div>
+                <div>
+                  {{ props.level.preview.description }}
+                </div>
+              </div>
+              
+              <div class="text-4xl">
                 {{ props.level.main_chapter }}.{{ props.level.sub_chapter }}
+              </div>
             </div>
+            
         </button>
     </div>
 </template>

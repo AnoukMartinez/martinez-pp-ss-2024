@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { levels } from './testdata/levels.ts'
+import { levels } from './testdata/levelObjects.ts'
 import LevelSelectButton from './LevelSelectButton.vue'
 </script>
 <script lang="ts">

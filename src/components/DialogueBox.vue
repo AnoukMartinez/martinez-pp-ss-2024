@@ -52,13 +52,23 @@ defineExpose({
 </script>
 
 <template>
-  <div class="resize-none">
-    <button class="text-4xl mt-14" @click="renderNextLine">{{ props.dialogue_lines[currentIndex].content }}</button>
+  <div class="w-full h-full">
+    <button @click="renderNextLine">
+      <p class="text-4xl text-center p-4">
+        {{ props.dialogue_lines[currentIndex].content }}
+      </p>
+    </button>
   </div>
 </template>
 
 <style scoped>
   button {
     width: 100%;
+    height: 100%;
+  }
+
+  p {
+    max-width: 100%;
+    overflow-wrap: break-word;
   }
 </style>
