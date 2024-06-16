@@ -8,6 +8,7 @@ import { Level } from '../components/DialogueLine.ts'
 const props = defineProps<{ level : Level }>()
 const dialogueBoxRef = ref()
 const currentFlagIndex = ref(0)
+const currentBackgroundIndex = ref(0)
 const lastSolvedFlag = ref(null)
 const inputRequired = ref(false)
 const allDialogueLinesRead = ref(false)
@@ -19,6 +20,8 @@ function handleValueChange() {
     lastSolvedFlag.value = props.level.flags[currentFlagIndex.value]?.keyword;
     currentFlagIndex.value += 1
   }
+
+  currentBackgroundIndex.value += 1
 
   if(dialogueBoxRef.value.currentIndex < props.level.dialogue_lines.length) {
     dialogueBoxRef.value.currentIndex++
@@ -48,13 +51,15 @@ function checkEndOfLevel() {
     dialogueBoxRef.value.resetLineIndex()
     currentFlagIndex.value = 0
     allDialogueLinesRead.value = false
+    currentBackgroundIndex.value = 0
   }
 }
 
 const backgroundStyle = computed(() => {
+  console.log(`Background updated. cfi: ${currentFlagIndex.value}`)
   // TODO: Fit div containing image to always fit image properly, then set fit to cover
   return {
-    backgroundImage: `url(${props.level.backgrounds[currentFlagIndex.value]})`,
+    backgroundImage: `url(${props.level.backgrounds[currentBackgroundIndex.value]})`,
     backgroundRepeat: 'no-repeat',
   };
 });

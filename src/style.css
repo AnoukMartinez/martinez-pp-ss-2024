@@ -720,6 +720,10 @@ select {
   --tw-contain-style:  ;
 }
 
+.relative {
+  position: relative;
+}
+
 .m-4 {
   margin: 1rem;
 }
@@ -768,6 +772,10 @@ select {
 
 .table {
   display: table;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-1\/3 {
@@ -874,6 +882,10 @@ select {
   --tw-space-x-reverse: 0;
   margin-right: calc(3rem * var(--tw-space-x-reverse));
   margin-left: calc(3rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .overflow-y-auto {

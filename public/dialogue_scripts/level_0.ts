@@ -24,12 +24,10 @@ export const chapter_0_1: Level = {
     ],
     backgrounds: [
         "/assets/asset-placeholder-gitpull.png", 
-        "/assets/asset-placeholder-gitadd.png",
-        "/assets/asset-placeholder-gitpull.png", 
         "/assets/asset-placeholder-gitadd.png"
     ],
     preview: {
         description: "Ein kleines Tutorial, dass dem Spieler Steuerungen beibringen soll.",
-        thumbnail_img_path: "/assets/asset-placeholder-gitpull.png"
+        thumbnail_img_path: "/assets/asset-placeholder-gitclone-before.png"
     }
 };

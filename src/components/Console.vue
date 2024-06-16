@@ -8,7 +8,7 @@ const output_lines = ref<string[]>([])
 const emit = defineEmits(['correct-input-given'])
 
 const evaluateInput = () => {
-  if (inputValue.value == props.flagKeyword) {
+  if (inputValue.value.trimEnd() == props.flagKeyword) {
     emit('correct-input-given')
     output_lines.value.push(`> ${inputValue.value} erfolgreich ausgeführt!`)
   } else {
