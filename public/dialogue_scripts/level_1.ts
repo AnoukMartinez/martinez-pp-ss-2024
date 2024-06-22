@@ -1,23 +1,37 @@
-import { MagicString } from "../../../../../AppData/Local/deno/npm/registry.npmjs.org/@vue/compiler-sfc/3.4.27/dist/compiler-sfc.d.ts";
 import { Level, DialogueLine, Flag, Preview, FlagKeywords } from '../../src/components/DialogueLine.ts'
 
 export const chapter_1_1: Level = {
     main_chapter: 1,
     sub_chapter: 1,
-    title: "Code Herunterladen",
+    title: "Repository Neu Herunterladen",
     dialogue_lines: [
         {
-            content : "Um an einem Projekt aus einem Repository zu arbeiten, müssen wir erst an den Code kommen."
+            content : "Um an einem existierendem Projekt aus einem Repository zu arbeiten, müssen wir erst den Code herunterladen."
         },
         {
-            content : "Um das aktuelle Repository herunterzuladen, führen wir git clone aus."
+            content : "Um ein neues Repository herunterzuladen, benutzen wir $.",
+            highlighted : "clone"
+        },
+        {
+            content : "Wir führen $ aus.",
+            highlighted : "git clone <Link zum Repository>"
+        },
+        {
+            content : "Das Repository wird dann in den Ordner kopiert, in dem sich die Konsole momentan befindet."
+        },
+        {
+            content : "Für dieses Tutorial stellen wir einen Link zu einem fiktionalem Repository zur Verfügung, den du kopieren musst."
+        },
+        {
+            content : "Denke daran $, und dann den Link zum Repository.",
+            highlighted : "git clone"
         },
         {
             content : "Versuchen wir es einmal in der Konsole!",
             required_flag : FlagKeywords.GIT_CLONE
         },
         {
-            content : "Wie du sehen kannst, haben wir jetzt die Grundlage unseres Burgers hier, und eine Bestellung!"
+            content : "Wie du sehen kannst, haben wir jetzt die Grundlage unseres Burgers hier, und ein paar Zutaten mit denen wir arbeiten können."
         },
         {
             content : "Im nächsten Schritt werden wir ein paar Dateien hinzufügen."
@@ -30,22 +44,71 @@ export const chapter_1_1: Level = {
         }
     ],
     backgrounds: [
-        "/assets/asset-placeholder-gitclone-before.png",
-        "/assets/asset-placeholder-gitclone-after.png"
+        "/assets/initial_empty.png",
+        "/assets/initial_clone.png"
     ],
     preview : {
         description : "Ein erster Einstieg, der zeigen soll, wie man anfangen kann zu Coden und Remote Code herunterzuladen.",
         thumbnail_img_path : "/assets/asset-placeholder-gitclone-before.png"
     }
 };
-      
+
 export const chapter_1_2 : Level = {
     main_chapter : 1,
     sub_chapter : 2,
+    title : "Aktuellen Fortschritt Ziehen",
+    dialogue_lines : [
+        {
+            content : "Bei der Arbeit an einem Repository ist es wichtig, immer auf dem neuesten Stand zu bleiben."
+        },
+        {
+            content : "Es reicht nicht aus, das Repository auf deinem Rechner zu haben."
+        },
+        {
+            content : "Es kann nämlich sein, dass dein lokaler Stand schon veraltet ist."
+        },
+        {
+            content : "Daher solltest du immer bevor du anfängst zu arbeiten einmal $ ausführen.",
+            highlighted : "git pull"
+        },
+        {
+            content : "Schauen wir doch einmal, ob wir auf dem neuesten Stand sind. Führe jetzt das Kommando aus!",
+            required_flag : FlagKeywords.GIT_PULL
+        },
+        {
+            content : "Oh, da hat sich tatsächlich etwas getan!"
+        },
+        {
+            content : "Diese Bestellung war vorher noch nicht hier."
+        },
+        {
+            content : "Na dann wollen wir mal den gewünschten Burger herstellen!"
+        }
+    ],
+    flags : [
+        {
+            id : 0,
+            keyword : FlagKeywords.GIT_PULL
+        }
+    ],
+    backgrounds: [
+        "/assets/initial_clone.png",
+        "/assets/initial_pull.png"
+    ],
+    preview : {
+        description : "Wir ziehen uns den aktuellen Fortschritt und updaten unser Repository.",
+        thumbnail_img_path : "/assets/initial_clone.png"
+    }
+}
+      
+export const chapter_1_3 : Level = {
+    main_chapter : 1,
+    sub_chapter : 3,
     title : "Dateien Hinzufügen",
     dialogue_lines : [
         {
-            content : "Um unserem Burger eine Zutat hinzuzufügen, führen wir git add aus."
+            content : "Um unserem Burger eine Zutat hinzuzufügen, führen wir $ aus.",
+            highlighted : "git add"
         },
         {
             content : "Add fügt eine Datei an der du arbeitest dem aktuellem Commit hinzu."
@@ -65,7 +128,8 @@ export const chapter_1_2 : Level = {
             content : "Sehr gut! Der Burger sieht doch schon einmal ganz lecker aus."
         },
         {
-            content : "Alternativ kannst du auch mit git add . alle Dateuen auf einmal hinzufügen, die du verändert hast."
+            content : "Alternativ kannst du auch mit $ alle Dateuen auf einmal hinzufügen, die du verändert hast.",
+            highlighted : "git add ."
         },
         {
             content : "Im besten Fall möchtest du aber darüber nachdenken, welche Änderungen du noch nicht speichern willst."
@@ -77,34 +141,36 @@ export const chapter_1_2 : Level = {
             keyword : FlagKeywords.GIT_ADD_FLEISCH
         },
         {
-            id : 0,
+            id : 1,
             keyword : FlagKeywords.GIT_ADD_SALAT
         }
     ],
     backgrounds : [
-        "/assets/asset-placeholder-gitclone-after.png", 
-        "/assets/asset-placeholder-gitadd-1.png",
-        "/assets/asset-placeholder-gitadd-2.png"
+        "/assets/add_instructions.png", 
+        "/assets/add_meat.png",
+        "/assets/add_meat_and_salad.png"
     ],
     preview : {
         description : "In diesem Kapitel fügen wir Dateien unserem Commit hinzu.",
-        thumbnail_img_path : "/assets/asset-placeholder-gitadd-1.png"
+        thumbnail_img_path : "/assets/add_instructions.png"
     }
 }
 
-export const chapter_1_3 : Level = {
+export const chapter_1_4 : Level = {
     main_chapter : 1,
-    sub_chapter : 3,
+    sub_chapter : 4,
     title : "Status Abfragen",
     dialogue_lines : [
         {
             content : "Sieht so aus als hättest du alle gewünschten Zutaten auf deinem Burger!"
         },
         {
-            content : "Um zu sehen, welche Dateien wir verändert haben, oder ob etwas neu dazugekommen oder gelöscht ist, führen wir git status aus."
+            content : "Um zu checken, welche Dateien wir verändert haben, oder ob etwas neu dazugekommen oder gelöscht ist, führen wir $ aus.",
+            highlighted : "git status"
         },
         {
-            content : "Git status markiert in der Konsole alle Dateien die sich seit dem letzten commit unterscheiden."
+            content : "$ markiert in der Konsole alle Dateien die sich seit dem letzten commit unterscheiden.",
+            highlighted : "git status"
         },
         {
             content : "Versuchen wir es einmal!",
@@ -136,10 +202,10 @@ export const chapter_1_3 : Level = {
     }
 }
 
-export const chapter_1_4 : Level = {
+export const chapter_1_5 : Level = {
     main_chapter : 1,
-    sub_chapter : 4,
-    title : "COMMIT ABSCHLIEßEN",
+    sub_chapter : 5,
+    title : "Commit Abschliessen",
     dialogue_lines : [
         {
             content : "Stelle dir vor, wir haben alle unsere Zutaten dem Burger hinzugefügt."
@@ -190,7 +256,7 @@ export const chapter_1_4 : Level = {
     ],
     backgrounds : [
         "/assets/asset-placeholder-gitadd-2.png",
-        "/assets/asset-placeholder-gitcommit.png"
+        "/assets/commit_plus_message.png"
     ],
     preview : {
         description : "Wir benennen einen commit und verpacken unsere Bestellung.",
@@ -198,9 +264,9 @@ export const chapter_1_4 : Level = {
     }
 }
 
-export const chapter_1_5 : Level = {
+export const chapter_1_6 : Level = {
     main_chapter : 1,
-    sub_chapter : 5,
+    sub_chapter : 6,
     title : "Commit Abschicken",
     dialogue_lines : [
         {
@@ -242,8 +308,8 @@ export const chapter_1_5 : Level = {
         }
     ],
     backgrounds : [
-        "/assets/asset-placeholder-gitcommit.png",
-        "/assets/asset-placeholder-gitclone-before.png"
+        "/assets/commit_plus_message.png",
+        "/assets/after_push_happy.png"
     ],
     preview : {
         description : "Wir beenden unseren Commit und räumen unsere Arbeitsfläche wieder frei für neue Arbeit!",

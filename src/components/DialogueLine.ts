@@ -6,7 +6,9 @@ export enum FlagKeywords {
   GIT_COMMIT = "git commit -m",
   GIT_PUSH = "git push",
   GIT_CLONE = "git clone",
-  TUTORIAL = "hallo welt"
+  TUTORIAL = "hallo welt",
+  GIT_CHECKOUT_B = `git checkout -b "dev"`,
+  GIT_CHECKOUT_NAME = `git checkout "dev"`
 }
 
 export interface Flag {
@@ -17,6 +19,7 @@ export interface Flag {
 export interface DialogueLine {
   content : string;
   required_flag? : string;
+  highlighted? : string;
 }
 
 export interface Preview {

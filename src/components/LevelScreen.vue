@@ -61,6 +61,8 @@ const backgroundStyle = computed(() => {
   return {
     backgroundImage: `url(${props.level.backgrounds[currentBackgroundIndex.value]})`,
     backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center', // Center the image
   };
 });
 
@@ -82,8 +84,8 @@ export default {
       <Sidebar />
     </div>
     
-    <div class="flex flex-col flex-grow" :style="backgroundStyle">
-      <div class="flex-grow">
+    <div class="flex flex-col flex-grow">
+      <div class="flex-grow" :style="backgroundStyle">
         <div class="text-4xl font-bold text-red-600 ml-12 mt-12">
           {{ props.level.main_chapter }}.{{ props.level.sub_chapter }}
         </div>

@@ -31,7 +31,7 @@ export default {
             <div class="flex flex-col items-start ml-8 w-full h-full justify-around">
                 <div>
                   <div class="text-4xl font-bold mb-2">
-                    {{ props.level.title }}
+                    {{ props.level.main_chapter }}.{{ props.level.sub_chapter }} {{ props.level.title }}
                   </div>
 
                   <div class="text-xl">

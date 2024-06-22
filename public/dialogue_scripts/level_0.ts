@@ -9,11 +9,12 @@ export const chapter_0_1: Level = {
             content: "Hier ist ein kleines, noch nicht fertiges Tutorial"
         },
         {
-            content: "Bitte gebe jetzt 'hallo welt' ein.",
-            required_flag: FlagKeywords.TUTORIAL
+            content: "Bitte gebe jetzt $ ein.",
+            required_flag: FlagKeywords.TUTORIAL,
+            highlighted : "hallo welt"
         },
         {
-            content: "Gut!"
+            content: "Sehr gut! Damit solltest du jetzt auf den Ernst des Lebens vorbereitet sein."
         }
     ],
     flags: [
@@ -23,11 +24,11 @@ export const chapter_0_1: Level = {
         }
     ],
     backgrounds: [
-        "/assets/asset-placeholder-gitpull.png", 
-        "/assets/asset-placeholder-gitadd.png"
+        "/assets/initial_empty.png", 
+        "/assets/after_push_happy.png"
     ],
     preview: {
         description: "Ein kleines Tutorial, dass dem Spieler Steuerungen beibringen soll.",
-        thumbnail_img_path: "/assets/asset-placeholder-gitclone-before.png"
+        thumbnail_img_path: "/assets/after_push_happy.png"
     }
 };

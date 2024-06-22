@@ -49,13 +49,21 @@ defineExpose({
   renderNextLine,
   currentIndex
 });
+
+function processLine(line) {
+  if (line.highlighted === undefined) {
+    return line.content;
+  } else {
+    return line.content.replace('$', `<span class="text-red-500">${line.highlighted}</span>`);
+  }
+}
+
 </script>
 
 <template>
   <div class="w-full h-full">
     <button @click="renderNextLine">
-      <p class="text-4xl text-center p-4">
-        {{ props.dialogue_lines[currentIndex].content }}
+      <p class="text-4xl text-center p-4" v-html="processLine(props.dialogue_lines[currentIndex])">
       </p>
     </button>
   </div>
