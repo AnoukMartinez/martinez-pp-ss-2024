@@ -62,21 +62,12 @@ function processLine(line) {
 
 <template>
   <div class="w-full h-full">
-    <button @click="renderNextLine">
-      <p class="text-4xl text-center p-4" v-html="processLine(props.dialogue_lines[currentIndex])">
+    <button class="w-full h-full" @click="renderNextLine">
+      <p class="text-4xl text-center p-4 max-w-full break-words" v-html="processLine(props.dialogue_lines[currentIndex])">
       </p>
     </button>
   </div>
 </template>
 
 <style scoped>
-  button {
-    width: 100%;
-    height: 100%;
-  }
-
-  p {
-    max-width: 100%;
-    overflow-wrap: break-word;
-  }
 </style>

@@ -81,7 +81,7 @@ export default {
 <template>
   <div class="h-screen flex flex-row">
     <div>
-      <Sidebar />
+      <Sidebar :currentLevel="props.level"/>
     </div>
     
     <div class="flex flex-col flex-grow">
