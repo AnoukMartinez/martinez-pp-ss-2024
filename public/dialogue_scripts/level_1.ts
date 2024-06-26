@@ -193,12 +193,12 @@ export const chapter_1_4 : Level = {
         }
     ],
     backgrounds : [
-        "/assets/asset-placeholder-gitadd-2.png",
-        "/assets/asset-placeholder-gitstatus.png"
+        "/assets/add_meat_and_salad.png",
+        "/assets/status.png"
     ],
     preview : {
         description : "Wir fragen unseren aktuellen Status ab, und sehen uns an, welche Dateien hinzugefügt wurden.",
-        thumbnail_img_path : "/assets/asset-placeholder-gitstatus.png"
+        thumbnail_img_path : "/assets/status.png"
     }
 }
 
@@ -255,12 +255,12 @@ export const chapter_1_5 : Level = {
         }
     ],
     backgrounds : [
-        "/assets/asset-placeholder-gitadd-2.png",
+        "/assets/add_meat_and_salad.png",
         "/assets/commit_plus_message.png"
     ],
     preview : {
         description : "Wir benennen einen commit und verpacken unsere Bestellung.",
-        thumbnail_img_path : "/assets/asset-placeholder-gitstatus.png"
+        thumbnail_img_path : "/assets/add_meat_and_salad.png"
     }
 }
 
@@ -313,6 +313,6 @@ export const chapter_1_6 : Level = {
     ],
     preview : {
         description : "Wir beenden unseren Commit und räumen unsere Arbeitsfläche wieder frei für neue Arbeit!",
-        thumbnail_img_path : "/assets/asset-placeholder-commit.png"
+        thumbnail_img_path : "/assets/commit_plus_message.png",
     }
 }
