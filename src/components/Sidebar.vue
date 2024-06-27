@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { defineProps, ref, computed, onMounted } from 'vue';
+import { defineProps, ref, computed, onMounted, emit, defineEmits } from 'vue';
 import { Level } from '../components/DialogueLine.ts'
 
 const props = defineProps<{ currentLevel : Level }>()
 const transcriptIsVisible = ref(false)
 const showSolutions = ref(false)
+const emit = defineEmits(['skip-level'])
 
 function toggleTranscriptVisibility() {
   transcriptIsVisible.value = !transcriptIsVisible.value
@@ -30,15 +31,28 @@ const backgroundStyle = computed(() => {
     backgroundPosition: 'center',
   };
 });
+
+function skipLevel() {
+  emit('skip-level')
+}
+
+function returnIconStyle(iconName : string) {
+  return {
+    backgroundImage : `url(/assets/icons/${iconName}.png)`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100% 100%',
+    backgroundPosition: 'center',
+  }
+};
 </script>
 
 <template>
-<div class="h-full w-48 bg-green-500 flex flex-col items-center justify-evenly">
-    <router-link to="/">Home</router-link>
-    <router-link to="/levels">Levels</router-link>
-    <div>Skip</div>
-    <button @click="toggleTranscriptVisibility">Transkript</button>
-    <router-link to="/">Info</router-link>
+<div class="h-full w-48 bg-green-500 flex flex-col items-center justify-evenly p-2">
+    <router-link to="/" class="w-full h-1/6" :style="returnIconStyle(`home`)"></router-link>
+    <router-link to="/levels" class="w-full h-1/6" :style="returnIconStyle(`levels`)"></router-link>
+    <button @click="skipLevel" class="w-full h-1/6" :style="returnIconStyle(`skip`)"></button>
+    <button @click="toggleTranscriptVisibility" class="w-full h-1/6" :style="returnIconStyle(`script`)"></button>
+    <router-link to="/" class="w-full h-1/6" :style="returnIconStyle(`info`)"></router-link>
 </div>
 
 <div v-if="transcriptIsVisible" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">

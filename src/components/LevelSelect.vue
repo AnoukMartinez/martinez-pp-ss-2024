@@ -17,7 +17,9 @@ export default {
     </div>
     
     <div class="bg-red-500 flex flex-col w-3/4 rounded-3xl items-center">
-      <!--  <router-link v-for="level in levels" :key="`${level.main_chapter}-${level.sub_chapter}`" :to="`/levels/${level.main_chapter}/chapters/${level.sub_chapter}`" class="w-full"> -->
+      <router-link to="/">
+        <button class="bg-yellow-500 rounded-xl m-6 mb-0 px-6 py-2">Zurück zu Home</button>
+      </router-link>
       <LevelSelectButton v-for="level in levels" :level="level" />
     </div>
   </div>

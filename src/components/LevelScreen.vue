@@ -47,12 +47,16 @@ function checkEndOfLevel() {
   // currentFlagIndex.value muss + 1 gerechnet werden um Länge zu entsprechen.
   // Ich mag diese Lösung nicht wirklich, aber es funktioniert im Moment nur so.
   if(currentFlagIndex.value + 1 == props.level.flags.length && allDialogueLinesRead.value) {
-    emit('solution-cracked')
-    dialogueBoxRef.value.resetLineIndex()
-    currentFlagIndex.value = 0
-    allDialogueLinesRead.value = false
-    currentBackgroundIndex.value = 0
+    endLevel()
   }
+}
+
+function endLevel() {
+  emit('solution-cracked')
+  dialogueBoxRef.value.resetLineIndex()
+  currentFlagIndex.value = 0
+  allDialogueLinesRead.value = false
+  currentBackgroundIndex.value = 0
 }
 
 const backgroundStyle = computed(() => {
@@ -81,7 +85,7 @@ export default {
 <template>
   <div class="h-screen flex flex-row">
     <div>
-      <Sidebar :currentLevel="props.level"/>
+      <Sidebar :currentLevel="props.level" @skip-level="endLevel"/>
     </div>
     
     <div class="flex flex-col flex-grow">
@@ -90,7 +94,7 @@ export default {
           {{ props.level.main_chapter }}.{{ props.level.sub_chapter }}
         </div>
       </div>
-      <div class="h-1/3 bg-yellow-200">
+      <div class="h-1/3 bg-white">
         <DialogueBox ref="dialogueBoxRef" :dialogue_lines="props.level.dialogue_lines" :lastSolvedFlag="lastSolvedFlag" @input-required="handleInputRequired" @no-input-required="handleNoInputRequired" @all-lines-read="handleAllDialogueLinesRead"/>
       </div>  
     </div>

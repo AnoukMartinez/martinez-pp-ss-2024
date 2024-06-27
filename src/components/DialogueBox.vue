@@ -63,7 +63,7 @@ function processLine(line) {
 <template>
   <div class="w-full h-full">
     <button class="w-full h-full" @click="renderNextLine">
-      <p class="text-4xl text-center p-4 max-w-full break-words" v-html="processLine(props.dialogue_lines[currentIndex])">
+      <p class="text-5xl text-center p-8 max-w-full break-words" v-html="processLine(props.dialogue_lines[currentIndex])">
       </p>
     </button>
   </div>

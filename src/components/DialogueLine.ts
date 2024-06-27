@@ -1,6 +1,6 @@
 export enum FlagKeywords {
   GIT_PULL = "git pull",
-  GIT_ADD_FLEISCH = "git add fleisch",
+  GIT_ADD_FLEISCH = "git add patty",
   GIT_ADD_SALAT = "git add salat",
   GIT_STATUS = "git status",
   GIT_COMMIT = "git commit -m",
