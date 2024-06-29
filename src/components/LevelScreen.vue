@@ -13,6 +13,8 @@ const lastSolvedFlag = ref(null)
 const inputRequired = ref(false)
 const allDialogueLinesRead = ref(false)
 
+const showRepolink = ref(false)
+
 const emit = defineEmits(['solution-cracked'])
 
 function handleValueChange() {
@@ -26,6 +28,8 @@ function handleValueChange() {
   if(dialogueBoxRef.value.currentIndex < props.level.dialogue_lines.length) {
     dialogueBoxRef.value.currentIndex++
   }
+
+  showRepolink.value = false
 
   checkEndOfLevel()
 }
@@ -74,6 +78,18 @@ watch(inputRequired, (newVal) => {
   inputRequired.value = newVal
 })
 
+function toggleRepolink() {
+  console.log("line reached")
+  showRepolink.value = true
+}
+
+function copyToClipboard() {
+  const textToCopy = document.getElementById('textToCopy').innerText;
+  navigator.clipboard.writeText(textToCopy).then(() => {
+    alert('In Zwischenablage kopiert!');
+  })
+}
+
 </script>
 
 <script lang="ts">
@@ -84,6 +100,8 @@ export default {
 
 <template>
   <div class="h-screen flex flex-row">
+    
+
     <div>
       <Sidebar :currentLevel="props.level" @skip-level="endLevel"/>
     </div>
@@ -93,15 +111,24 @@ export default {
         <div class="text-4xl font-bold text-red-600 ml-12 mt-12">
           {{ props.level.main_chapter }}.{{ props.level.sub_chapter }}
         </div>
+        <div v-if="showRepolink" class="absolute inset-auto bg-white p-2 m-4 w-1/6 h-1/6 flex justify-center overlay flex-col">
+          <div id="textToCopy" class="p-4 bg-gray-200">
+            https://github.com/AnoukMartinez/martinez-pp-ss-2024
+          </div>
+          <button @click="copyToClipboard" class="mt-2 p-2 bg-blue-500 text-white">
+            In Zwischenablage kopieren
+          </button>
+        </div>
+          
       </div>
       <div class="h-1/3 bg-white">
-        <DialogueBox ref="dialogueBoxRef" :dialogue_lines="props.level.dialogue_lines" :lastSolvedFlag="lastSolvedFlag" @input-required="handleInputRequired" @no-input-required="handleNoInputRequired" @all-lines-read="handleAllDialogueLinesRead"/>
+        <DialogueBox ref="dialogueBoxRef" :dialogue_lines="props.level.dialogue_lines" :lastSolvedFlag="lastSolvedFlag" @input-required="handleInputRequired" @no-input-required="handleNoInputRequired" @all-lines-read="handleAllDialogueLinesRead" @show-repo-link="toggleRepolink"/>
       </div>  
     </div>
     
     
     <div class="w-1/4 p-4 bg-slate-500 h-full shrink-0">
-      <Console :title="props.level.title" :flagKeyword="props.level.flags[currentFlagIndex].keyword" :inputRequired="inputRequired" @correct-input-given="handleValueChange" />
+      <Console :title="props.level.title" :flagKeyword="props.level.flags[currentFlagIndex].keyword" :inputRequired="inputRequired" :hint="props.level.flags[currentFlagIndex].hint" @correct-input-given="handleValueChange" />
     </div>
   </div>
 </template>

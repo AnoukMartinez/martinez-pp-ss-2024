@@ -6,7 +6,13 @@ export const chapter_0_1: Level = {
     title: "Tutorial",
     dialogue_lines: [
         {
-            content: "Hier ist ein kleines, noch nicht fertiges Tutorial"
+            content: "Hier ist ein kleines, noch nicht fertiges Tutorial."
+        },
+        {
+            content: "In diesem Spiel werden wir verschiedene Git Kommandos vorstellen."
+        },
+        {
+            content: "Anschließend darfst du die Kommandos in einer Konsole, die du rechts sehen kannst ausprobieren."
         },
         {
             content: "Bitte gebe jetzt $ ein.",

@@ -1,11 +1,11 @@
 export enum FlagKeywords {
   GIT_PULL = "git pull",
-  GIT_ADD_FLEISCH = "git add patty",
-  GIT_ADD_SALAT = "git add salat",
+  GIT_ADD_FLEISCH = "git add patty.js",
+  GIT_ADD_SALAT = "git add salat.png",
   GIT_STATUS = "git status",
-  GIT_COMMIT = "git commit -m",
+  GIT_COMMIT = `git commit -m "(Hier deine Nachricht)"`,
   GIT_PUSH = "git push",
-  GIT_CLONE = "git clone",
+  GIT_CLONE = "git clone https://github.com/AnoukMartinez/martinez-pp-ss-2024",
   TUTORIAL = "hallo welt",
   GIT_CHECKOUT_B = `git checkout -b "dev"`,
   GIT_CHECKOUT_NAME = `git checkout "dev"`
@@ -13,7 +13,8 @@ export enum FlagKeywords {
 
 export interface Flag {
   id : number,
-  keyword : FlagKeywords
+  keyword : FlagKeywords,
+  hint? : string
 }
 
 export interface DialogueLine {

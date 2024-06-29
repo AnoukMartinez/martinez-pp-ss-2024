@@ -1,23 +1,49 @@
 <script setup lang="ts">
 import { ref, defineProps, computed, watch } from 'vue'
 
-const props = defineProps<{ title : string, flagKeyword : string, inputRequired : boolean }>()
+const props = defineProps<{ title : string, flagKeyword : string, inputRequired : boolean, hint? : string }>()
 
 const inputValue = ref('')
 const output_lines = ref<string[]>([])
 const emit = defineEmits(['correct-input-given'])
 
 const evaluateInput = () => {
-  if (inputValue.value.trimEnd() == props.flagKeyword) {
-    emit('correct-input-given')
-    output_lines.value.push(`> ${inputValue.value} erfolgreich ausgeführt!`)
+  const handleSuccessfulInput = (message: string) => {
+    emit('correct-input-given');
+    output_lines.value.push(`> ${message} erfolgreich ausgeführt!`);
+  };
+
+  const handleFailedInput = () => {
+    if(props.hint != undefined) {
+      output_lines.value.push('> ' + props.hint);
+    } else {
+      console.log(props.hint)
+      output_lines.value.push('> ' + 'Nicht ganz...');
+    }
+  };
+
+  const isGitCommitMessageValid = (input: string): boolean => {
+    const pattern = /^git commit -m "(.*?)"$/;
+    return pattern.test(input.trimEnd());
+  };
+
+  if (props.flagKeyword == `git commit -m "(Hier deine Nachricht)"`) {
+    if (isGitCommitMessageValid(inputValue.value)) {
+      handleSuccessfulInput(inputValue.value);
+    } else {
+      handleFailedInput();
+    }
   } else {
-    console.log(props.flagKeyword)
-    output_lines.value.push('> ' + 'Nicht ganz. Denke daran dass du einige Dateien hinzufügen musst bevor du deinen commit machen kannst.')
+    if (inputValue.value.trimEnd() == props.flagKeyword) {
+      handleSuccessfulInput(inputValue.value);
+    } else {
+      handleFailedInput();
+    }
   }
+
   // Leert Eingabe nach jedem Versuch
-  inputValue.value = ''
-}
+  inputValue.value = '';
+};
 
 const handleSubmitByEnter = () => {
   if (props.inputRequired) {
@@ -51,7 +77,7 @@ watch(() => props.inputRequired, (newVal) => {
     <div class="flex-1 overflow-y-auto">
       <table class="w-full">
         <tr v-for="(row, index) in output_lines" :key="index">
-          <td>{{ row }}</td>
+          <td class="text-xl">{{ row }}</td>
         </tr>
       </table>
     </div>

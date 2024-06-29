@@ -10,7 +10,7 @@ const props = defineProps({
   lastSolvedFlag: {},
 });
 
-const emit = defineEmits(['input-required', 'no-input-required', 'all-lines-read'])
+const emit = defineEmits(['input-required', 'no-input-required', 'all-lines-read', 'show-repo-link'])
 
 const currentIndex = ref(0);
 
@@ -19,6 +19,14 @@ const renderNextLine = () => {
   if(currentIndex.value >= props.dialogue_lines.length - 1) {
     emit('all-lines-read')
     return
+  }
+
+  // Das ist der schrecklichste Code den ich jemals geschrieben habe.
+  if(currentIndex.value < props.dialogue_lines.length - 1) {
+    const nextLine = props.dialogue_lines[currentIndex.value + 1]
+    if(nextLine.content == "Versuchen wir einmal dieses Repo über die Konsole zu klonen!") {
+      emit('show-repo-link')
+    }
   }
 
   const current_line_flag = props.dialogue_lines[currentIndex.value]?.required_flag;

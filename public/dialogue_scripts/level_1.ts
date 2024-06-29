@@ -6,28 +6,29 @@ export const chapter_1_1: Level = {
     title: "Repository Neu Herunterladen",
     dialogue_lines: [
         {
-            content : "Um an einem existierendem Projekt aus einem Repository zu arbeiten, müssen wir erst den Code herunterladen."
+            content : "In den meisten Fällen wirst du wahrscheinlich an einem existierenden GitHub Projekt arbeiten."
         },
         {
-            content : "Um ein neues Repository herunterzuladen, benutzen wir $.",
-            highlighted : "clone"
+            content : "Der Code existiert dann in dem Remote Repository auf GitHub, aber noch nicht bei dir lokal."
         },
         {
-            content : "Wir führen $ aus.",
-            highlighted : "git clone <Link zum Repository>"
+            content : "Dazu müssen wir erst das Repository auf deinen Rechner kopieren."
+        },
+        {
+            content : "Um ein existierendes Repository herunterzuladen, benutzen wir $.",
+            highlighted : "git clone <HTTPS Link zum Repository>"
         },
         {
             content : "Das Repository wird dann in den Ordner kopiert, in dem sich die Konsole momentan befindet."
         },
         {
-            content : "Für dieses Tutorial stellen wir einen Link zu einem fiktionalem Repository zur Verfügung, den du kopieren musst."
+            content : "Für den Zweck dieses Tutorial verwenden wir einen Platzhalter Link den du gleich kopieren kannst."
         },
         {
-            content : "Denke daran $, und dann den Link zum Repository.",
-            highlighted : "git clone"
+            content : "Normalerweise findest du den Download Link auf der Github Seite des jeweiligen Repos unter <> Code."
         },
         {
-            content : "Versuchen wir es einmal in der Konsole!",
+            content : "Versuchen wir einmal dieses Repo über die Konsole zu klonen!",
             required_flag : FlagKeywords.GIT_CLONE
         },
         {
@@ -111,17 +112,21 @@ export const chapter_1_3 : Level = {
             highlighted : "git add"
         },
         {
-            content : "Add fügt eine Datei an der du arbeitest dem aktuellem Commit hinzu."
+            content : "Um eine einzelne Datei hinzuzufügen, müssen wir den Pfad zur Datei im Repo angeben.",
         },
         {
-            content : "Stelle dir einen Commit wie ein Paket vor, in dem wir alle Dateien an denen wir gearbeitet haben verpacken."
+            content : "Das könnte zum Beispiel so aussehen: $",
+            highlighted : "git add ./src/index.html",
         },
         {
-            content : "Lass und die gewünschten Zutaten eine nach der anderen hinzufügen!",
-            required_flag : FlagKeywords.GIT_ADD_FLEISCH
+            content : "Damit fügen wir eine Datei an der du arbeitest dem aktuellem Commit Paket hinzu."
         },
         {
-            content : "Gut, aber der Burger sieht noch ein bisschen leer aus. Vielleicht fehlt noch etwas Farbe.",
+            content : "Lass und die gewünschten Zutaten eine nach der anderen hinzufügen! Beginnen wir mit dem Patty.",
+            required_flag : FlagKeywords.GIT_ADD_FLEISCH,
+        },
+        {
+            content : "Sehr gut! Eine Zutat fehlt noch.",
             required_flag : FlagKeywords.GIT_ADD_SALAT
         },
         {
@@ -138,11 +143,13 @@ export const chapter_1_3 : Level = {
     flags : [
         {
             id : 0,
-            keyword : FlagKeywords.GIT_ADD_FLEISCH
+            keyword : FlagKeywords.GIT_ADD_FLEISCH,
+            hint : "Nicht ganz. Denke an die Dateiendungen!"
         },
         {
             id : 1,
-            keyword : FlagKeywords.GIT_ADD_SALAT
+            keyword : FlagKeywords.GIT_ADD_SALAT,
+            hint : "Nicht ganz. Denke an die Dateiendungen!"
         }
     ],
     backgrounds : [
