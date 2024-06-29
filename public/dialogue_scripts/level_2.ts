@@ -39,11 +39,24 @@ export const chapter_2_1: Level = {
         {
             content : "Sehr gut! Wie du siehst, haben wir mit dem erstellen des Branches auch direkt zum Branch gewechselt.",
         },
+        {
+            content : "Um eine Liste der Branches auszugeben, und zu sehen auf welchem Branch du dich momentan befindest, kannst du $ benutzen.",
+            highlighted : "git branch"
+        },
+        {
+            content : "Probieren wir es einmal aus und schauen was zurückgegeben wird.",
+            required_flag : FlagKeywords.GIT_BRANCH
+        }
     ],
     flags: [
         {
             id: 0,
-            keyword: FlagKeywords.GIT_CHECKOUT_B
+            keyword: FlagKeywords.GIT_CHECKOUT_B,
+            hint : "Nicht Ganz. Denke an die -b Flagge, die signalisiert dass wir einen neuen Branch eröffnen möchten."
+        },
+        {
+            id: 0,
+            keyword: FlagKeywords.GIT_BRANCH,
         }
     ],
     backgrounds: [
@@ -51,7 +64,7 @@ export const chapter_2_1: Level = {
         "/assets/after_push_happy.png"
     ],
     preview: {
-        description: "...In dem wir eine neue Arbeitsfläche schaffen.",
+        description: "Wir machen eine neue Arbeitsfläche auf, um uns nicht gegenseitig in die Quere zu kommen.",
         thumbnail_img_path: "/assets/initial_empty.png"
     }
 };
@@ -59,39 +72,55 @@ export const chapter_2_1: Level = {
 export const chapter_2_2 : Level = {
     main_chapter : 2,
     sub_chapter : 2,
-    title : "Auf Branch Arbeiten",
+    title : "Auf Branch Arbeiten/Commit Workflow",
     dialogue_lines : [
         {
             content : "Auf unserem neuem Branch können wir wie gewohnt arbeiten."
         },
         {
-            content : "Versuchen wir einmal einen normalen Commit durchzulaufen."
+            content : "Versuchen wir doch einmal einen normalen Commit durchzulaufen, den wir im letzten Kapitel gelernt haben."
         },
         {
-            content : "Hierzu überspringen wir clone und pull, da wir bisher noch nicht am Branch gearbeitet haben."
+            content : "Hierzu überspringen wir clone, da wir unser Repo bereits gedownloaded haben, und git pull, da wir auf einem neuen Branch arbeiten der noch keine Commits haben kann."
         },
         {
-            content : "Fangen wir am Besten wieder damit an, unsere Zutaten hinzuzufügen.",
+            content : "(hier felt noch ein bisschen content, insbesondere das hintergrundbild aber ist noch wip)",
+        },
+        {
+            content : "Fangen wir am Besten wieder damit an, unsere Zutaten aus der neuen Bestellung hinzuzufügen.",
             required_flag : FlagKeywords.GIT_ADD_FLEISCH
         },
         {
-            content : "Sehr gut! Weiter geht's."
+            content : "Sehr gut! Weiter geht's mit dem Verpacken des Commits."
         },
         {
             content : "Wenn du eine Erinnerung an die Reihenfolge der Kommandos brauchst, kannst du immer auf Hilfe klicken.",
             required_flag : FlagKeywords.GIT_COMMIT
         },
         {
-            content : "Sehr gut, und dann noch fertigstellen.",
+            content : "Sehr gut, und dann noch abschicken.",
             required_flag : FlagKeywords.GIT_PUSH
         },
         {
             content : "Und damit haben wir eine neue Bestellung auf unseren Branch gepusht!"
         },
+        {
+            content : "Unser erstellter Branch ist jetzt auch auf dem Remote Repository für alle verfügbar."
+        }
     ],
     flags : [
         {
             id : 0,
+            keyword : FlagKeywords.GIT_ADD_FLEISCH,
+            hint : "Nicht Ganz. Denke daran deine Zutaten mit den richtigen Dateiendungen hinzuzufügen."
+        },
+        {
+            id : 1,
+            keyword : FlagKeywords.GIT_COMMIT,
+            hint : "Nicht Ganz. Bevor wir unseren Commit Abschicken, müssen wir diesen erst Verpacken und Benennen."
+        },
+        {
+            id : 2,
             keyword : FlagKeywords.GIT_PUSH
         }
     ],
@@ -99,7 +128,7 @@ export const chapter_2_2 : Level = {
 
     ],
     preview : {
-        description : "...In dem wir eine normale Bestellung auf unserer neuen Arbeitsfläche erstellen.",
+        description : "Wir wiederholen das Gelernte aus dem ersten Kapitel und schließen einen normalen Commit auf unserem neuen Branch ab.",
         thumbnail_img_path : ""
     }
 }
@@ -123,11 +152,15 @@ export const chapter_2_3 : Level = {
             content : "Nun möchten wir das -b weglassen, um zu signalisieren, dass wir auf einen bereits existierenden Branch wechseln."
         },
         {
+            content : "Wir benutzen also nur $.",
+            highlighted : "git checkout <Branchname>"
+        },
+        {
             content : "Versuche nun wieder auf den main Branch zu wechseln.",
             required_flag : FlagKeywords.GIT_CHECKOUT_NAME
         },
         {
-            content : "Sehr gut, jetzt sind wir wieder an unserem Hauptbranch!"
+            content : "Sehr gut, jetzt sind wir wieder an unserem Hauptbranch."
         }
     ],
     flags : [
@@ -140,7 +173,7 @@ export const chapter_2_3 : Level = {
 
     ],
     preview : {
-        description : "...In dem wir zurück auf andere Branches wechseln.",
+        description : "Wir wechseln wieder auf unseren Main Branch.",
         thumbnail_img_path : ""
     }
 }

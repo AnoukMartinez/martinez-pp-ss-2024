@@ -33,9 +33,6 @@ export const chapter_1_1: Level = {
         },
         {
             content : "Wie du sehen kannst, haben wir jetzt die Grundlage unseres Burgers hier, und ein paar Zutaten mit denen wir arbeiten können."
-        },
-        {
-            content : "Im nächsten Schritt werden wir ein paar Dateien hinzufügen."
         }
     ],
     flags: [
@@ -122,6 +119,9 @@ export const chapter_1_3 : Level = {
             content : "Damit fügen wir eine Datei an der du arbeitest dem aktuellem Commit Paket hinzu."
         },
         {
+            content : "Nehmen wir in unserem Beispiel an, dass sich alle Dateien im Source Ordner befinden, also keine Pfade wie ./src benötigen, sondern nur die Dateinamen."
+        },
+        {
             content : "Lass und die gewünschten Zutaten eine nach der anderen hinzufügen! Beginnen wir mit dem Patty.",
             required_flag : FlagKeywords.GIT_ADD_FLEISCH,
         },
@@ -138,18 +138,21 @@ export const chapter_1_3 : Level = {
         },
         {
             content : "Im besten Fall möchtest du aber darüber nachdenken, welche Änderungen du noch nicht speichern willst."
+        },
+        {
+            content : "In späteren Kapiteln werden wir noch darauf eingehen, wie du bestimmte Dateien permanent ignorieren kannst."
         }
     ],
     flags : [
         {
             id : 0,
             keyword : FlagKeywords.GIT_ADD_FLEISCH,
-            hint : "Nicht ganz. Denke an die Dateiendungen!"
+            hint : "Nicht ganz. Denke an die Dateiendungen die im Bild gezeigt werden!"
         },
         {
             id : 1,
             keyword : FlagKeywords.GIT_ADD_SALAT,
-            hint : "Nicht ganz. Denke an die Dateiendungen!"
+            hint : "Nicht ganz. Denke an die Dateiendungen die im Bild gezeigt werden!"
         }
     ],
     backgrounds : [
@@ -196,7 +199,8 @@ export const chapter_1_4 : Level = {
     flags : [
         {
             id : 0,
-            keyword : FlagKeywords.GIT_STATUS
+            keyword : FlagKeywords.GIT_STATUS,
+            hint : "Nicht ganz. Bei git status brauchst du keine weiteren Argumente oder Flaggen."
         }
     ],
     backgrounds : [
@@ -221,17 +225,21 @@ export const chapter_1_5 : Level = {
             content : "Jetzt möchten wir unsere fertige Bestellung verpacken und abschicken."
         },
         {
-            content : "Um einen commit abzuschließen benutzen wir git commit -m."
+            content : "Um einen commit abzuschließen benutzen wir $.",
+            highlighted : `git commit -m "<Hier deine Nachricht>"`
         },
         {
             content : "Hinter -m kommt ein String, in dem du möglichst präzise beschreiben solltest, was du geändert hast."
         },
         {
-            content : "Die Message kannst du dir selber ausdenken, aber denke daran dass andere Leute, die mit dir zusammen arbeiten auf einen Blick sehen sollten, was du geschafft hast."
+            content : "Die Message kannst du dir selber ausdenken, aber denke daran dass andere Leute, die mit dir zusammen arbeiten auf einen Blick sehen sollten, was du verändert hast."
+        },
+        {
+            content : `Hier könnte die Message zum Beispiel "Bestellung 1 Zubereitet" sein, aber du kannst auch gerne etwas anderes schreiben.`
         },
         {
             content : "Versuche es einmal!",
-            required_flag : FlagKeywords.GIT_COMMIT
+            required_flag : FlagKeywords.GIT_COMMIT,
         },
         {
             content : "Leider hat dieses Spiel nicht genug Entwickler um zu prüfen ob deine Nachricht Sinn macht..."
@@ -258,7 +266,8 @@ export const chapter_1_5 : Level = {
     flags : [
         {
             id : 0,
-            keyword : FlagKeywords.GIT_COMMIT
+            keyword : FlagKeywords.GIT_COMMIT,
+            hint : `Nicht Ganz. Denke daran die Syntax git commit -m "<Deine Nachricht>" einzuhalten.`
         }
     ],
     backgrounds : [
@@ -286,7 +295,7 @@ export const chapter_1_6 : Level = {
             content : "Ein wichtiger Schritt der jetzt noch fehlt, ist den Commit auch an das Remote Repository abzuschicken."
         },
         {
-            content : "Wir nutzen hierzu einfach git push. Wir schieben unser Paket weg."
+            content : "Wir nutzen hierzu einfach git push. Wir schicken unser Paket weg."
         },
         {
             content : "Probieren wir es aus.",

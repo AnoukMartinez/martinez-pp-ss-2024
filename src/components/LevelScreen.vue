@@ -64,13 +64,11 @@ function endLevel() {
 }
 
 const backgroundStyle = computed(() => {
-  console.log(`Background updated. cfi: ${currentFlagIndex.value}`)
-  // TODO: Fit div containing image to always fit image properly, then set fit to cover
   return {
     backgroundImage: `url(${props.level.backgrounds[currentBackgroundIndex.value]})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    backgroundPosition: 'center', // Center the image
+    backgroundPosition: 'center',
   };
 });
 

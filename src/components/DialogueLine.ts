@@ -8,7 +8,8 @@ export enum FlagKeywords {
   GIT_CLONE = "git clone https://github.com/AnoukMartinez/martinez-pp-ss-2024",
   TUTORIAL = "hallo welt",
   GIT_CHECKOUT_B = `git checkout -b "dev"`,
-  GIT_CHECKOUT_NAME = `git checkout "dev"`
+  GIT_CHECKOUT_NAME = `git checkout "dev"`,
+  GIT_BRANCH = "git branch"
 }
 
 export interface Flag {
