@@ -6,24 +6,21 @@ export const chapter_2_1: Level = {
     title: "Neuen Branch Erstellen",
     dialogue_lines: [
         {
-            content: "Wir sind nicht mehr alleine in der Küche."
+            content: "Manchmal wollen wir gerne ohne Risiko neue Features ausprobieren."
         },
         {
-            content: "Obwohl es große Überwindungen gekostet hat, brauchen wir wohl doch ein bisschen Unterstützung."
+            content: "Um hier keine wichtigen Änderungen zu überschreiben, können wir einen neuen Branch aufmachen."
         },
         {
-            content: "Aber wir können wohl kaum beide gleichzeitig an einem Tisch arbeiten."
+            content: "Auf dem können wir dann in Ruhe experiementieren, und wenn alles gut läuft wieder in einem $ mit unserer Haupt Arbeitsfläche zusammenführen.",
+            highlighted : "merge"
         },
         {
-            content: "Am besten machen wir unserem neuen Koch ein bisschen Platz, und kochen erst mal woanders weiter."
-        },
-        {
-            content: "Hierzu möchten wir die Arbeitsplatte, unseren $ wechseln.",
-            highlighted : "Branch"
+            content: "Wir wollen heute einen experimentellen Salatburger etwas weiter hinten kochen, damit niemand sieht was für kulinarische Verbrechen wir begehen."
         },
         {
             content: "Hierzu benutzen wir $ um einen neuen Branch zu eröffnen.",
-            highlighted : `git checkout -b "<Unser Branchnames>" `
+            highlighted : `git checkout -b <Unser Branchnames> `
         },
         {
             content: "Du kannst deinem Branch einen Namen deiner Wahl geben."
@@ -46,13 +43,16 @@ export const chapter_2_1: Level = {
         {
             content : "Probieren wir es einmal aus und schauen was zurückgegeben wird.",
             required_flag : FlagKeywords.GIT_BRANCH
-        }
+        },
+        {
+            content : "(In der Konsole kommt noch Custom Feedback für jede Flagge aber ist noch WIP).",
+        },
     ],
     flags: [
         {
             id: 0,
             keyword: FlagKeywords.GIT_CHECKOUT_B,
-            hint : "Nicht Ganz. Denke an die -b Flagge, die signalisiert dass wir einen neuen Branch eröffnen möchten."
+            hint : "Nicht Ganz. Denke an die -b Flagge, die signalisiert dass wir einen neuen Branch eröffnen möchten, und daran, dass du keine String Zeichen benutzt."
         },
         {
             id: 0,
@@ -61,11 +61,12 @@ export const chapter_2_1: Level = {
     ],
     backgrounds: [
         "/assets/initial_empty.png", 
-        "/assets/after_push_happy.png"
+        "/assets/small_clean.png",
+        "/assets/small_clean.png"
     ],
     preview: {
         description: "Wir machen eine neue Arbeitsfläche auf, um uns nicht gegenseitig in die Quere zu kommen.",
-        thumbnail_img_path: "/assets/initial_empty.png"
+        thumbnail_img_path: "/assets/small_empty.png"
     }
 };
 
@@ -81,14 +82,11 @@ export const chapter_2_2 : Level = {
             content : "Versuchen wir doch einmal einen normalen Commit durchzulaufen, den wir im letzten Kapitel gelernt haben."
         },
         {
-            content : "Hierzu überspringen wir clone, da wir unser Repo bereits gedownloaded haben, und git pull, da wir auf einem neuen Branch arbeiten der noch keine Commits haben kann."
-        },
-        {
-            content : "(hier felt noch ein bisschen content, insbesondere das hintergrundbild aber ist noch wip)",
+            content : "Hierzu überspringen wir clone und git pull, da wir auf einem neuen Branch arbeiten der noch keine Commits haben kann."
         },
         {
             content : "Fangen wir am Besten wieder damit an, unsere Zutaten aus der neuen Bestellung hinzuzufügen.",
-            required_flag : FlagKeywords.GIT_ADD_FLEISCH
+            required_flag : FlagKeywords.GIT_ADD_SALAT
         },
         {
             content : "Sehr gut! Weiter geht's mit dem Verpacken des Commits."
@@ -111,7 +109,7 @@ export const chapter_2_2 : Level = {
     flags : [
         {
             id : 0,
-            keyword : FlagKeywords.GIT_ADD_FLEISCH,
+            keyword : FlagKeywords.GIT_ADD_SALAT,
             hint : "Nicht Ganz. Denke daran deine Zutaten mit den richtigen Dateiendungen hinzuzufügen."
         },
         {
@@ -125,7 +123,10 @@ export const chapter_2_2 : Level = {
         }
     ],
     backgrounds : [
-
+        "/assets/small_add_instructions.png",
+        "/assets/small_salad.png",
+        "/assets/small_commit.png",
+        "/assets/small_clean.png",
     ],
     preview : {
         description : "Wir wiederholen das Gelernte aus dem ersten Kapitel und schließen einen normalen Commit auf unserem neuen Branch ab.",
@@ -146,7 +147,7 @@ export const chapter_2_3 : Level = {
         },
         {
             content : "Im letzten Schritt haben wir $ benutzt, um einen neuen Branch zu erstellen.",
-            highlighted : `git checkout -b "dev"`
+            highlighted : `git checkout -b dev`
         },
         {
             content : "Nun möchten wir das -b weglassen, um zu signalisieren, dass wir auf einen bereits existierenden Branch wechseln."
@@ -156,8 +157,9 @@ export const chapter_2_3 : Level = {
             highlighted : "git checkout <Branchname>"
         },
         {
-            content : "Versuche nun wieder auf den main Branch zu wechseln.",
-            required_flag : FlagKeywords.GIT_CHECKOUT_NAME
+            content : "Versuche nun wieder auf den $ Branch zu wechseln.",
+            required_flag : FlagKeywords.GIT_CHECKOUT_NAME,
+            highlighted : "main"
         },
         {
             content : "Sehr gut, jetzt sind wir wieder an unserem Hauptbranch."
@@ -170,10 +172,11 @@ export const chapter_2_3 : Level = {
         }
     ],
     backgrounds : [
-
+        "/assets/small_clean.png",
+        "/assets/switchback_clean.png"
     ],
     preview : {
         description : "Wir wechseln wieder auf unseren Main Branch.",
-        thumbnail_img_path : ""
+        thumbnail_img_path : "/assets/switchback_clean.png"
     }
 }

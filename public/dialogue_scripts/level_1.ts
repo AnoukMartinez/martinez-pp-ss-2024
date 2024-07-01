@@ -133,7 +133,7 @@ export const chapter_1_3 : Level = {
             content : "Sehr gut! Der Burger sieht doch schon einmal ganz lecker aus."
         },
         {
-            content : "Alternativ kannst du auch mit $ alle Dateuen auf einmal hinzufügen, die du verändert hast.",
+            content : "Alternativ kannst du auch mit $ alle Dateien auf einmal hinzufügen, die du verändert hast.",
             highlighted : "git add ."
         },
         {
@@ -187,7 +187,7 @@ export const chapter_1_4 : Level = {
             required_flag : FlagKeywords.GIT_STATUS
         },
         {
-            content : "Wie du sehen kannst, ist hier neu dazugekommen eine Tomate und das Fleisch."
+            content : "Wie du sehen kannst, ist hier neu dazugekommen ein Patty und der Salat."
         },
         {
             content : "In den meisten Fällen wirst du wahrscheinlich bereits vorhandene Dateien weiter bearbeiten oder verändern."
@@ -246,18 +246,6 @@ export const chapter_1_5 : Level = {
         },
         {
             content : "Aber nehmen wir einfach mal an dass du dir ganz viel Mühe gegeben hast."
-        },
-        {
-            content : "Commits sollten kurz und präzise sein. Wenn du viel zu sagen hast, aber keinen ganzen Roman als Commit Überschrift schreiben möchtest, kannst du noch eine Beschreibung hinzufügen."
-        },
-        {
-            content : "Benutze dazu einfach eine zweite -m Flagge."
-        },
-        {
-            content : 'Diese könnte so aussehen: git commit -m "\(Hier deine Überschrift)"\ -m "\(Hier deine detailliertere Beschreibung)"\.'
-        },
-        {
-            content : "Ob dein Projekt Extra Beschreibungen nutzen möchte, sollte bei jedem Projekt mit deinen Team Mitgliedern abgesprochen werden."
         },
         {
             content : "Im besten Fall machst du kurze Commits nach jeder Änderung, die nur kleine Beschreibungen erfordern."
