@@ -70,7 +70,7 @@ function processLine(line) {
 
 <template>
   <div class="w-full h-full">
-    <button class="w-full h-full" @click="renderNextLine">
+    <button id="dialogueBox" class="w-full h-full relative" @click="renderNextLine">
       <p class="text-5xl text-center p-8 max-w-full break-words" v-html="processLine(props.dialogue_lines[currentIndex])">
       </p>
     </button>
@@ -78,4 +78,7 @@ function processLine(line) {
 </template>
 
 <style scoped>
+#dialogueBox:hover {
+  background-color: lightgray;
+}
 </style>

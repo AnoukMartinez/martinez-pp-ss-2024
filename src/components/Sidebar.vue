@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref, computed, onMounted, emit, defineEmits } from 'vue';
+import { defineProps, ref, computed, onMounted, emit, defineEmits, watch } from 'vue';
 import { Level } from '../components/DialogueLine.ts'
 
 const props = defineProps<{ currentLevel : Level }>()
@@ -35,24 +35,15 @@ const backgroundStyle = computed(() => {
 function skipLevel() {
   emit('skip-level')
 }
-
-function returnIconStyle(iconName : string) {
-  return {
-    backgroundImage : `url(/assets/icons/${iconName}.png)`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '100% 100%',
-    backgroundPosition: 'center',
-  }
-};
 </script>
 
 <template>
 <div class="h-full w-48 bg-green-500 flex flex-col items-center justify-evenly p-2">
-    <router-link to="/" class="w-full h-1/6" :style="returnIconStyle(`home`)"></router-link>
-    <router-link to="/levels" class="w-full h-1/6" :style="returnIconStyle(`levels`)"></router-link>
-    <button @click="skipLevel" class="w-full h-1/6" :style="returnIconStyle(`skip`)"></button>
-    <button @click="toggleTranscriptVisibility" class="w-full h-1/6" :style="returnIconStyle(`script`)"></button>
-    <router-link to="/" class="w-full h-1/6" :style="returnIconStyle(`info`)"></router-link>
+    <router-link to="/" class="w-full h-1/6 sidebarLink homeLink"></router-link>
+    <router-link to="/levels" class="w-full h-1/6 sidebarLink levelsLink"></router-link>
+    <button @click="skipLevel" class="w-full h-1/6 sidebarLink skipLink"></button>
+    <button @click="toggleTranscriptVisibility" class="w-full h-1/6 sidebarLink scriptLink" ></button>
+    <router-link to="/" class="w-full h-1/6 sidebarLink infoLink"></router-link>
 </div>
 
 <div v-if="transcriptIsVisible" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
@@ -78,4 +69,44 @@ function returnIconStyle(iconName : string) {
 </template>
 
 <style>
+.sidebarLink {
+  background-repeat : no-repeat;
+  background-size: 100% 100%;
+}
+
+.homeLink {
+  background-image : url('/assets/icons/home.png');
+}
+.homeLink:hover {
+  background-image : url('/assets/icons/home_hover.png');
+}
+
+.levelsLink {
+  background-image : url('/assets/icons/levels.png');
+}
+.levelsLink:hover {
+  background-image : url('/assets/icons/levels_hover.png');
+}
+
+.skipLink {
+  background-image : url('/assets/icons/skip.png');
+}
+.skipLink:hover {
+  background-image : url('/assets/icons/skip_hover.png');
+}
+
+.scriptLink {
+  background-image : url('/assets/icons/script.png');
+}
+.scriptLink:hover {
+  background-image : url('/assets/icons/script_hover.png');
+}
+
+.infoLink {
+  background-image : url('/assets/icons/info.png');
+}
+.infoLink:hover {
+  background-image : url('/assets/icons/info_hover.png');
+}
+
 </style>

@@ -21,7 +21,7 @@ export default {
 </script>
 
 <template>
-    <div class="bg-red-300 h-24 sm:h-32 md:h-40 lg:h-48 xl:h-56 w-11/12 mx-auto my-6 rounded-xl flex items-center justify-center">
+    <div class="bg-red-300 hover:bg-red-100 h-24 sm:h-32 md:h-40 lg:h-48 xl:h-56 w-11/12 mx-auto my-6 rounded-xl flex items-center justify-center">
       <router-link :to="`/levels/${level.main_chapter}/chapters/${level.sub_chapter}`" class="w-full h-full flex items-center">
         <div class="w-full h-full flex items-center m-4">
             <div class="w-1/6 h-5/6 bg-gray-200 rounded-xl" :style="backgroundStyle">
