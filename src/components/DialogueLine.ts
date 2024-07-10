@@ -5,7 +5,7 @@ export enum FlagKeywords {
   GIT_STATUS = "git status",
   GIT_COMMIT = `git commit -m "(Hier deine Nachricht)"`,
   GIT_PUSH = "git push",
-  GIT_CLONE = "git clone https://github.com/AnoukMartinez/martinez-pp-ss-2024",
+  GIT_CLONE = "git clone https://github.com/anoukmartinez/martinez-pp-ss-2024",
   TUTORIAL = "hallo welt",
   GIT_CHECKOUT_B = "git checkout -b dev",
   GIT_CHECKOUT_NAME = "git checkout main",

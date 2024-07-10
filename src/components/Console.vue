@@ -17,8 +17,8 @@ const evaluateInput = () => {
     if(props.hint != undefined) {
       output_lines.value.push('> ' + props.hint);
     } else {
-      console.log(props.hint)
       output_lines.value.push('> ' + 'Nicht ganz...');
+      console.log(props.flagKeyword)
     }
   };
 

@@ -77,7 +77,6 @@ watch(inputRequired, (newVal) => {
 })
 
 function toggleRepolink() {
-  console.log("line reached")
   showRepolink.value = true
 }
 
@@ -111,7 +110,7 @@ export default {
         </div>
         <div v-if="showRepolink" class="absolute inset-auto bg-white p-2 m-4 w-1/6 h-1/6 flex justify-center overlay flex-col">
           <div id="textToCopy" class="p-4 bg-gray-200">
-            https://github.com/AnoukMartinez/martinez-pp-ss-2024
+            https://github.com/anoukmartinez/martinez-pp-ss-2024
           </div>
           <button @click="copyToClipboard" class="mt-2 p-2 bg-blue-500 text-white">
             In Zwischenablage kopieren

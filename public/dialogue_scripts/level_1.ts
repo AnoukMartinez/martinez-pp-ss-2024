@@ -32,7 +32,7 @@ export const chapter_1_1: Level = {
             required_flag : FlagKeywords.GIT_CLONE
         },
         {
-            content : "Wie du sehen kannst, haben wir jetzt die Grundlage unseres Burgers hier, und ein paar Zutaten mit denen wir arbeiten können."
+            content : "Sehr gut! Wie du sehen kannst, haben wir jetzt die Grundlage unseres Burgers hier, und ein paar Zutaten mit denen wir arbeiten können."
         }
     ],
     flags: [
