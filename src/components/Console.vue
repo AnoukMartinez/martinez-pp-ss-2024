@@ -83,7 +83,7 @@ watch(() => props.inputRequired, (newVal) => {
     </div>
 
     <div class="flex items-center flex-col">
-      <input class="w-full p-2 text-lg font-bold text-white rounded-lg bg-black" id="inputabove" v-model="inputValue" :style="notAllowedStyle" :readonly="!props.inputRequired" @keydown.enter.prevent="handleSubmitByEnter"/>
+      <input class="w-full p-2 text-lg font-bold text-white rounded-lg bg-black" id="inputabove" v-model="inputValue" :style="notAllowedStyle" @input="inputValue = $event.target.value.toLowerCase()" :readonly="!props.inputRequired" @keydown.enter.prevent="handleSubmitByEnter"/>
       <input class="w-full p-2 mt-2 font-bold rounded-lg bg-blue-300 hover:bg-blue-500 active:bg-blue-600" type="submit" :value="props.inputRequired ? 'Eingabe Validieren' : 'Momentan keine Eingabe Nötig!'" @click="evaluateInput" :disabled="!props.inputRequired" :style="notAllowedStyle"/>
     </div>
 

@@ -46,7 +46,7 @@ function skipLevel() {
     <router-link to="/" class="w-full h-1/6 sidebarLink infoLink"></router-link>
 </div>
 
-<div v-if="transcriptIsVisible" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+<div v-if="transcriptIsVisible" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
   <div class="relative bg-white p-16 w-3/4 h-3/4" :style="backgroundStyle">
     <button @click="toggleTranscriptVisibility" class="bg-red-500 p-2 rounded-xl mb-2">Schliessen</button>
     <p class="mb-6 text-4xl font-bold">

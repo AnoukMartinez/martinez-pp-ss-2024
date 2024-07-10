@@ -16,7 +16,7 @@ export const chapter_1_1: Level = {
         },
         {
             content : "Um ein existierendes Repository herunterzuladen, benutzen wir $.",
-            highlighted : "git clone <HTTPS Link zum Repository>"
+            highlighted : "git clone (HTTPS Link zum Repository)"
         },
         {
             content : "Das Repository wird dann in den Ordner kopiert, in dem sich die Konsole momentan befindet."
@@ -109,17 +109,24 @@ export const chapter_1_3 : Level = {
             highlighted : "git add"
         },
         {
+            content : "Wir möchten in diesem Level alle Zutaten $ hinzufügen.",
+            highlighted : "aus der Liste unten rechts"
+        },
+        {
             content : "Um eine einzelne Datei hinzuzufügen, müssen wir den Pfad zur Datei im Repo angeben.",
         },
         {
-            content : "Das könnte zum Beispiel so aussehen: $",
-            highlighted : "git add ./src/index.html",
+            content : "Wenn unser Projekt einen Ordner mit dem Namen src hat, könnte der Befehl also zum Beispiel git add ./src/index.html sein."
         },
         {
-            content : "Damit fügen wir eine Datei an der du arbeitest dem aktuellem Commit Paket hinzu."
+            content : "Mit git add fügen wir eine Datei an der du arbeitest dem aktuellem Commit Paket hinzu."
         },
         {
-            content : "Nehmen wir in unserem Beispiel an, dass sich alle Dateien im Source Ordner befinden, also keine Pfade wie ./src benötigen, sondern nur die Dateinamen."
+            content : "Nehmen wir hier an, dass sich alle Dateien im Root Ordner befinden, also keine Pfade wie ./src benötigen, sondern nur die Dateinamen."
+        },
+        {
+            content : "Die Dateinamen kannst du immer $ den Zutaten rechts oben im Bild sehen.",
+            highlighted : "über"
         },
         {
             content : "Lass und die gewünschten Zutaten eine nach der anderen hinzufügen! Beginnen wir mit dem Patty.",
@@ -147,7 +154,7 @@ export const chapter_1_3 : Level = {
         {
             id : 0,
             keyword : FlagKeywords.GIT_ADD_FLEISCH,
-            hint : "Nicht ganz. Denke an die Dateiendungen die im Bild gezeigt werden!"
+            hint : "Nicht ganz. Denke an die Dateiendungen die im Bild gezeigt werden! Wir wollen zuerst unseren Patty hinzufügen."
         },
         {
             id : 1,

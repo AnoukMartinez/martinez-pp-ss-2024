@@ -20,6 +20,12 @@ export const chapter_0_1: Level = {
             highlighted : "hallo welt"
         },
         {
+            content: "Wenn du einmal feststeckst, kannst dir links auf dem Skript Button alle Texte in diesem Level ansehen."
+        },
+        {
+            content: "Wenn du merkst, dass du ein Kommando schon kennst, kannst du entweder das aktuelle Level mit dem Skip Button überspringen, oder auf Levels ein anderes Level auswählen."
+        },
+        {
             content: "Sehr gut! Damit solltest du jetzt auf den Ernst des Lebens vorbereitet sein."
         }
     ],
