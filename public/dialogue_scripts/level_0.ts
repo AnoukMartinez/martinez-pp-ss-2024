@@ -42,5 +42,9 @@ export const chapter_0_1: Level = {
     preview: {
         description: "Ein kleines Tutorial, dass dem Spieler Steuerungen beibringen soll.",
         thumbnail_img_path: "/assets/after_push_happy.png"
+    },
+    tutorial: {
+        tutorial_content: "Hier würden normalerweise jetzt extra Infos zum Kapitel Content stehen.",
+        tutorial_image_path: "/assets/tutorials/tutorial_placeholder.png"
     }
 };

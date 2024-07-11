@@ -48,6 +48,10 @@ export const chapter_1_1: Level = {
     preview : {
         description : "Ein erster Einstieg, der zeigen soll, wie man anfangen kann zu Coden und Remote Code herunterzuladen.",
         thumbnail_img_path : "/assets/asset-placeholder-gitclone-before.png"
+    },
+    tutorial: {
+        tutorial_content : "Hier würdest du den Link zum Klonen des Repos normalerweise finden.",
+        tutorial_image_path: "/assets/tutorials/git_clone_link.png"
     }
 };
 

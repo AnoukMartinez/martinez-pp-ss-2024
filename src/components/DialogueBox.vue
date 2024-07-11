@@ -96,9 +96,9 @@ const notAllowedStyle = computed(() => {
 
 <template>
   <div class="w-full h-full">
-    <button id="dialogueBox" class="w-full h-full relative">
+    <button class="w-full h-full relative">
       <button class="absolute top-0 text-xl left-0 m-4 border-4 border-color-black px-4 text-white bg-slate-800 hover:bg-red-500" @click="renderPreviousLine" :style="notAllowedStyle">Zurück</button>
-      <p class="text-5xl text-center p-8 max-w-full break-words" @click="renderNextLine" v-html="processLine(props.dialogue_lines[currentIndex])">
+      <p  id="dialogueBox" class="text-5xl text-center p-8 max-w-full break-words" @click="renderNextLine" v-html="processLine(props.dialogue_lines[currentIndex])">
       </p>
     </button>
   </div>

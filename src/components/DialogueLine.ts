@@ -37,4 +37,12 @@ export interface Level {
   flags : Array<Flag>;
   backgrounds : Array<string>;
   preview : Preview;
+  tutorial? : Tutorial;
+}
+
+export interface Tutorial {
+  // Momentan sind Tutorials darauf ausgelegt, nur ein Text/Bild zu haben
+  // In Zukunft könnten diese allerdings mit string arrays ersetzt werden
+  tutorial_content : string;
+  tutorial_image_path : string;
 }
