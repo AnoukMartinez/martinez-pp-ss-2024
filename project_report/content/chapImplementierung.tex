@@ -1,0 +1,31 @@
+\chapter{Implementierung}
+\label{chap:implementation}
+Für das System wurde ausschließlich ein Frontend entwickelt, dass in sich geschlossen bereits alle Dialoge und Bilder beinhaltet.
+
+Für die Implementierung wurden verschiedenste Web Technologien verwendet, die in dem Abschnitt Technologien näher beleuchtet werden.
+
+\section{Technologien}
+\begin{description}
+    \item \textbf{CSS und Tailwind} Für das generelle Styling des Frontends wurde im Projekt Tailwind CSS eingesetzt. Dieses Framework erleichtert es, Änderungen schnell und effizient umzusetzen und somit eine möglichst kurze Feedback-Schleife sicherzustellen. In Kombination mit Vite wurden bei Änderungen im Styling der Server direkt neu geladen, was den Entwicklungsprozess um vieles vereinfachte.
+    \item \textbf{Typescript} Als Programmiersprache für logische Funktionen wurde TypeScript statt Javascript verwendet, um es einfacher zu machen, Klassen und Interfaces zu erstellen, sowie eine Typsicherheit zu gewährleisten.
+    \item \textbf{Vite/Vue/HTML} HTML wurde im Projekt in Verbindung mit Vue.js verwendet. Vite diente zum Erstellen des Grundgerüsts des Vue-Projekts. Anschließend wurde der integrierte Entwicklungsserver von Vite genutzt, um eine möglichst schnelle Feedback-Schleife für visuelle Anpassungen zu ermöglichen.
+    \item \textbf{Deno} Deno wurde in diesem Projekt als Alternative zu Node.js verwendet. Dies erfolgte teils aus persönlichem Interesse, um die neue Technologie zu erlernen. Deno wurde als Ersatz für Node.js, da es von den selben Entwicklern stammt, und mehr Features bietet, die mehr Entwicklungsfreiraum für die Zukunft bieten als herkömmliche Laufzeitumgebungen. Zusätzlich bietet es eine Rückwärtskompatibilität mit Node.js, die alle alten Bibliotheken unterstützt.
+    \item \textbf{PWA Funktionalitäten} Zu Beginn des Projektes wurde überlegt, wie man das System möglichst zugänglich machen kann. Zunächst wurde in Erwägung gezogen, das System als Desktop Applikation zu implementieren. Hierzu wäre das Framework Electron verwendet worden. Hierbei könnten alle bisher erwähnten Frameworks wie gewohnt verwendet werden. In mehreren Beratungsgesprächen hatte sich allerdings herausgestellt, dass es sinnvoller wäre, eine Webapp zu entwickeln, die unabhängig vom System des Nutzenden funktioniert, und zudem Offline Funktionen aufweist. Es wurde sich daher entschieden, das System als Web-Applikation mit progressive Webapp (PWA) Funktionen zu implementieren. Grund hierfür war unter anderem, dass die Applikation möglichst unabhängig funktionieren soll und auch die Möglichkeit bieten soll, heruntergeladen zu werden. Studierende können hierbei eine lokale Version des Systems auf ihren Geräten haben.
+\end{description}
+
+\section{Implementierung der Proof of Concepts}
+Im folgenden Abschnitt werden alle Proof of Concepts noch einmal reflektiert betrachtet. Hierbei wird sich auf die ausformulierten Proof of Concepts aus \cref{chap:Textsatz} bezogen.
+\subsection{Mock Konsole} \footnote{\url{https://github.com/AnoukMartinez/martinez-pp-ss-2024/blob/main/src/components/Console.vue}}
+Die Mock Konsole wurde anhand einer Vue Komponente implementiert, die an bestimmten Stellen im Dialog automatisch aktiviert und deaktiviert wird. Bei Eingaben wird ein Feedback innerhalb der Konsole ausgegeben, welches zu der Aufgabe passt.
+
+Der Fallback für auswählbare Optionen wurde im Rahmen des Praxisprojektes nicht erstellt. Der zeitliche Rahmen war ungenügend. Außerdem wurden letztendlich andere Features als wichtiger eingestuft.
+
+\subsection{Dialog}
+Der Dialog wurde ebenfalls in einer eigenen Vue Komponente umgesetzt. \footnote{\url{https://github.com/AnoukMartinez/martinez-pp-ss-2024/blob/main/src/components/DialogueBox.vue}}
+Wenn keine Eingabe benötigt wird, kann der Nutzende des Systems auf die Dialog-Box klicken, um die nächste Zeile zu sehen.
+Es wurde zudem entschieden, einige Wörter hervorzuheben, die besonders wichtig sind, oder einen Hinweis auf die kommende Eingabe geben sollen.
+Wenn keine Eingabe nötig ist, wird dem Nutzendem ebenfalls ein Hinweis gegeben.
+
+\subsection{PWA Funktionalitäten}
+Die PWA Funktionen wurde zu Beginn der Implementierung eingerichtet, und funktionieren online. Die Anwendung ist herunterladbar, benötigt allerdings trotzdem eine Verbindung zum Server.
+In der momentanen Version der Applikation gibt es daher keine Offline Funktionalitäten.

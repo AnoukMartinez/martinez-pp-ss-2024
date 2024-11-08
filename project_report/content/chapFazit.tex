@@ -1,0 +1,39 @@
+\chapter{Fazit und Reflexion}
+Abschließend werden noch einmal alle Teile des Projekts reflektiert betrachtet. Zudem werden mögliche zukünftige Funktionen des Projekts betrachtet.
+
+\section{Schwierigkeiten bei der Implementierung}
+Eine der größten Herausforderungen bei der Umsetzung des Systems war die Organisation der Vue-Komponenten. Zwar war im Vorfeld geplant, dass beispielsweise bei Nutzendeneingaben ein entsprechendes Feedback generiert werden soll, jedoch wurde die Kommunikation zwischen den Komponenten nicht detailliert genug durchdacht. Stattdessen erfolgte die Implementierung situationsbedingt, abhängig von den jeweils benötigten Funktionalitäten.
+
+Dies lag teilweise daran, dass sich die Funktionsweise von Vue generell erst während der Projektarbeit parallel beigebracht wurde. 
+So war es intransparent, wie die Komponenten strukturiert werden sollten.
+
+Dies führte zu einem anfänglich komplexen und unübersichtlichen Einsatz von Vue-Emits, der im weiteren Verlauf der Entwicklung schrittweise reduziert und vereinfacht werden musste.
+
+\subsection{Analogie}
+Was zudem größtenteils zu Schwierigkeiten führte, war vor allem der Einsatz einer Analogie zum Erklären der Sachverhalte. Besonders herausfordernd war, immer Äquivalente zu den Themen zu finden, die mit der Analogie erklärbar sind.
+Beispielsweise war es sehr schwierig, einen sinnvollen Vergleich für das Klonen und Pullen eines Repository zu finden.
+
+Aus der Umfrage der Studierenden ergab sich, dass die Inhalte eine höhere Priorität einnehmen als das Setting und die Geschichte, die eventuell mit dem System kommt.
+Vor allem im Hinblick auf die Umfrageergebnisse lässt sich daher rückblickend sagen, dass die Verwendung einer Analogie im Kontext eines Lernsystems für Git eher ungeeignet ist.
+Im Falle der weiteren Entwicklung des Systems sollte die Analogie durch simple, praxisbezogene Visualisierungen ersetzt werden.
+
+Das größte Risiko bei der Verwendung einer Analogie ist hierbei Verwirrung unter den Nutzenden. 
+Um nicht den gesamten Fortschritt rückgängig zu machen, der im Rahmen des Projektes geleistet wurde, könnte dem Nutzenden eine Wahl gegeben werden, zwischen einem \gls{storymode} und einem Modus, der sich nur auf die Lerninhalte fokussiert.
+
+\section{Zukünftige Ergänzungen}
+Insgesamt lässt sich sagen, dass das Projekt momentan noch nicht in einem Zustand ist, in dem das System praktisch anwendbar wäre.
+Für die Fertigstellung eines minimal realisierbaren Systems fehlen noch folgende Aspekte:
+
+\begin{description}
+    \item[Rückmeldungen] Um das System benutzendenfreundlich und effizient zu gestalten, ist es notwendig, Rückmeldungen von Testnutzenden einzuholen. Auf Basis dieser Rückmeldungen muss das System detailliert angepasst werden, um eine frustrationsfreie Lernerfahrung zu gewährleisten.
+    \item[Erklärungen] Um einen besseren Lerneffekt zu gewährleisten, wurde ein Infoknopf in der Seitenleiste eingebaut, der für jedes Kapitel zusätzliche Erklärungen bereitstellen soll. Diese Erklärungen sind allerdings nur teilweise geschrieben worden, und erfordern noch einer inhaltlichen Erweiterung.
+    \item[Weitere Kapitel] Für die inhaltliche Vervollständigung des Systems fehlt ein Kapitel zum Thema Merge-Konflikte. Dieses wurde im Rahmen des Projekts nicht umgesetzt, da es den zeitlichen Umfang überschritten hätte. Zusätzlich wäre ein Mock-Editor zu integrieren, in dem Nutzende Merge-Konflikte simulieren können. Hierbei muss die Eingabe semantisch geprüft werden.
+    \item[Verständlicheres Feedback] Eine sinnvolle Ergänzung des Systems wären Ausgaben in der Konsole, die eine echte Ausgabe in der Git Bash simulieren.
+\end{description}
+
+Zudem könnten folgende optionale Funktionen noch zusätzlich implementiert werden. Diese sind allerdings nicht zwingender Weise für die Fertigstellung des Projektes benötigt.
+
+\begin{description}
+    \item[Fallback für Konsoleneingaben] Wie in den Proof of Concepts erwähnt, war initial eine Alternative für Texteingaben geplant, in welcher der Nutzende aus einer Auswahl an Kommandos durch Klicken wählen kann. Dann können Nutzende des Systems in den Einstellungen den Modus auswählen, den sie präferieren.
+    \item[Offline-Funktionen] Zuletzt sollten dem System Offline-Funktionen im Kontext der PWA-Funktion gegeben werden, um möglichst zugänglich für alle Studierenden zu sein. 
+\end{description}

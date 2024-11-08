@@ -1,0 +1,305 @@
+\documentclass[
+	ngerman,
+	%twoside,
+	BCOR=8mm,
+	headings=normal,
+	parskip=half,
+	headsepline,
+	automark,
+	listof=totoc,
+	bibliography=totoc,
+	%,captions=tableabove
+	%draft
+]{scrreprt}
+%
+%
+\input{packages}
+%
+\input{definitions}
+%
+\input{glsdefs}
+%
+\makeglossaries
+%
+\graphicspath{{images/}}
+%
+\addbibresource{references.bib}
+
+\nocite{*} % listet alle Quellen (auch die nicht zitierten!)
+%
+%=== für schnelleres kopilieren alle ungeänderten Dateien auskommentieren =====
+\includeonly{
+	content/chapDeclaration,
+	content/chapAbstract,
+	content/chapEinleitung,
+	content/chapProblemstellung,
+	content/chapLoesungsansatz,
+	content/chapImplementierung,
+    content/chapFazit,
+}
+%
+%
+%==============================================================================
+%
+\begin{document}
+%
+\pdfbookmark[0]{Titelseite}{titel}
+\input{content/Cover}
+\cleardoublepage
+\pagenumbering{Roman}
+\include{content/chapAbstract}
+
+\cleardoublepage
+\pdfbookmark[0]{Inhaltsverzeichnis}{toc}
+\tableofcontents
+% \listoftables
+\listoffigures
+\printglossary
+\printglossary[type=\acronymtype, title={Abkürzungsverzeichnis}]
+\printglossary[type=symbols, title={Symbolverzeichnis}]
+%
+\cleardoublepage
+\KOMAoptions{open=right}
+\pagenumbering{arabic}
+\include{content/chapEinleitung}
+\include{content/chapProblemstellung}
+\include{content/chapLoesungsansatz}
+\include{content/chapImplementierung}
+\include{content/chapFazit}
+%
+\printbibliography
+%
+\appendix
+\addchap{Anhang}
+\KOMAoptions{open=any}
+\newline
+
+Im Rahmen der Projektarbeit wurde eine Umfrage unter Studierenden der Fakultät 10 durchgeführt. 
+Teilnehmende sollten hierbei verschiedene Fragen zum Thema Git, GitHub und ihrer Demografik beantworten. 
+Im folgendem Abschnitt sind die vollständigen Ergebnisse dieser Umfrage zu finden.
+\par
+Bei einigen Fragen wurden Freitextfelder zur Verfügung gestellt. 
+Die Ergebnisse dieser Felder sind gesondert in Listen direkt unter den grafischen Darstellungen zu finden. \newline 
+Zudem anzumerken ist, dass zwei Unfragen parallel durchgeführt wurden, einmal in deutscher Sprache, und einmal in englischer Sprache verfasst. 
+Diese Maßnahme wurde getätigt, um die Umfrage möglichst zugänglich zu machen, und um möglichst viele diverse Antworten zu erhalten. 
+Alle im Abschnitt dargestellten Ergebnisse sind eine Kombination beider Ergebnisse. Die Fragestellungen wurden hierbei identisch formuliert. 
+Alle Antworten wurden am letzten Stand, dem 08.10.2024 um 15:35 abgerufen.
+
+\newpage
+{\LARGE \textbf{Demografik}}
+\newline
+
+% Studiengang
+\begin{figure}[h!]
+    \centering
+    \input{tikz/survey/figStudiengang}
+    \caption{Grafische Darstellung der Ergebnisse zur Frage: Studiengänge der Teilnehmer}
+\end{figure}
+
+% Semester
+\begin{figure}[h!]
+    \centering
+    \input{tikz/survey/figSemester}
+    \caption{Grafische Darstellung der Ergebnisse zur Frage: Semester der Teilnehmer}
+\end{figure}
+
+% Betriebssysteme
+\begin{figure}[h!]
+    \centering
+    \input{tikz/survey/figBetriebssysteme}
+    \caption{Grafische Darstellung der Ergebnisse zur Frage: Betriebssysteme der Teilnehmer}
+\end{figure}
+
+% Unterschied Git und Github
+\begin{figure}[h!]
+    \centering
+    \input{tikz/survey/figGitVSGitHub}
+    \caption{Grafische Darstellung der Ergebnisse zur Frage: ``Ich kenne den Unterschied zwischen Git und Code Hosting Plattformen wie GitHub.''}
+\end{figure}
+
+\newpage
+{\LARGE \textbf{Git und Github Erfahrungen}}
+
+Im Abschnitt der Umfrage zu Erfahrungen sollte sichergestellt werden, dass die Befragten sich bereits mit Git auseinandersetzen mussten.
+Zudem sollte erforscht werden, in welchem Zusammenhang Git verwendet wurde, und welche Schnittstellen zu Nutzung verwendet wurden.
+
+% Hat bereits an Kursen teilgenommen, in denen Git/Github verwendet wurde
+\begin{figure}[h!]
+    \centering
+    \input{tikz/survey/figKurse}
+    \caption{Grafische Darstellung der Ergebnisse zur Frage: ``Ich habe bereits im Rahmen meines Studiums an ein oder mehreren Kursen teilgenommen, in denen die Nutzung von Git oder Services wie GitHub erforderlich war.''}
+\end{figure}
+
+% Git/Github an der TH
+\begin{figure}[h!]
+    \centering
+    \input{tikz/survey/figAnTH}
+    \caption{Grafische Darstellung der Ergebnisse zur Frage: ``Ich habe bereits Git oder Services wie GitHub im Kontext meiner Projekte der Hochschule verwendet.''}
+\end{figure}
+
+% Git/Github für Arbeit
+\begin{figure}[h!]
+    \centering
+    \input{tikz/survey/figArbeit}
+    \caption{Grafische Darstellung der Ergebnisse zur Frage: ``Ich habe bereits Git oder Services wie GitHub im Rahmen meiner Arbeit verwendet.''}
+\end{figure}
+
+% Git/Github für private Projekte
+\begin{figure}[h!]
+    \centering
+    \input{tikz/survey/figPrivate}
+    \caption{Grafische Darstellung der Ergebnisse zur Frage: ``Ich habe bereits Git oder Services wie GitHub im Kontext meiner persönlichen privaten Projekte verwendet.''}
+\end{figure}
+
+% GUI Client
+\begin{figure}[h!]
+    \centering
+    \input{tikz/survey/figGUI}
+    \caption{Grafische Darstellung der Ergebnisse zur Frage: ``Ich habe schon einmal einen GitHub GUI Client verwendet.''}
+\end{figure}
+
+% Grafisches Interface
+\begin{figure}[h!]
+    \centering
+    \input{tikz/survey/figGrafischesInterface}
+    \caption{Grafische Darstellung der Ergebnisse zur Frage: ``Ich habe schon einmal GitHub über das integrierte grafische Interface einer IDE verwendet.''}
+\end{figure}
+
+% Git über Kommandozeile
+\begin{figure}[h!]
+    \centering
+    \input{tikz/survey/figKommando}
+    \caption{Grafische Darstellung der Ergebnisse zur Frage: ``Ich habe bereits Git über die Kommandozeile verwendet.''}
+\end{figure}
+
+\newpage
+{\LARGE \textbf{Selbsteinschätzung der Teilnehmenden}}
+
+Im dritten Teil der Umfrage wurde Teilnehmenden eine Möglichkeit gegebene, ihre eigenen Kompetenzen einzuschätzen und zu bewerten.
+Hierbei wurden verschiedenste Aussagen getätigt, dessen Zutreffen im Anschluss auf einer Skala von Eins bis Zehn bewertet wurden.
+
+Dabei wurde der folgende Info Text mit den ungefähren Vergleichswerten beigefügt. Hierbei soll eine 1 auf der Skala etwa vergleichbar sein mit der Aussage ``Ich habe noch nie von dem Service/Tool gehört''. 
+Eine 10 hingegen soll auf der Skala vergleichbar sein mit der Aussage ``Ich habe den Service/das Tool vollkommen verstanden und kenne ein paar fortgeschrittene Konzepte''.
+Fortgeschrittene Konzepte sollen hier beispielsweise Branches für Git sein, oder generelle Code Review Funktionen für GitHub. Diese Vergleiche wurdem im Kontext der Umfrage in der Fragestellung spezifiziert.
+
+% Wissen Git
+\begin{figure}[h!]
+    \centering
+    \input{tikz/figWissen}
+    \caption{Grafische Darstellung der Ergebnisse zur Frage: Wissen von Git}
+\end{figure}
+
+% Wissen Github
+\begin{figure}[h!]
+    \centering
+    \input{tikz/survey/figWissenGitHub}
+    \caption{Grafische Darstellung der Ergebnisse zur Frage: Wissen von GitHub}
+\end{figure}
+
+% Wissen anderer Services
+\begin{figure}[h!]
+    \centering
+    \input{tikz/survey/figWissenAndere}
+    \caption{Grafische Darstellung der Ergebnisse zur Frage: Wissen von Anderen Services}
+\end{figure}
+
+\newpage
+{\LARGE \textbf{Interesse an einem Lernsystem}}
+
+Um anhand der Umfrage bestätigen zu können, ob ein Lernsystem wirklich von der Zielgruppe gewünscht wird, wurde die Frage speziell in einem eigenem Teil behandelt.
+Hierbei wurde unter anderem gefragt, ob Studierende generell Interesse an einem Lernsystem hätten, sowie was ihnen bei einem solchem System wichtig wäre.
+
+Zunächst wurden die möglichen Wissensmängel in einer Selbsteinschätzung der Studierenden betrachtet. Hierbei wurde ebenfalls die Möglichkeit gegeben, ein Freitextfeld auszuwählen. 
+Die gegebenen Antworten sind ebenfalls in diesem Dokument beschrieben, jeweils in einer Auslistung unter der grafischen Darstellung der vorgegebenen Ergebnisse.
+
+% Gründe für Mängel
+\begin{figure}[h!]
+    \centering
+    \input{tikz/figGruende}
+    \caption{Grafische Darstellung der Ergebnisse zur Frage: Mögliche Gründe für Wissensmängel im Bereich}
+\end{figure}
+
+Freitext: Sonstige Gründe für Wissensmängel
+\begin{itemize}
+    \setlength{\itemsep}{-1pt} 
+    \item An der Th wurde es nicht richtig erklärt bzw. beigebracht bekommen
+    \item Ich weiß wie Git funktioniert, weiß aber auch, dass mein Wissen nicht wirklich über die Basics hinausgeht.
+    \item Es besteht keine Notwendigkeit
+    \item Keine Erklärungen in den Fächern. Man wird einfach rein geworfen. Hätte mir eine kleine einführung gewünscht
+    \item Gute Git/Hub Kenntnisse sind kein muss. Meistens reichen einfache Push/Pull/Clone Aktionen.
+    \item Ich musste mich bisher nicht mehr in das Thema einarbeiten. Damit ist gemeint, dass ca. 6 Befehle alle meine Use-Cases bis jetzt abgedeckt haben.
+    \item Alles Wissen das ich besitze habe ich aufgrund von erfahrenen Freunden. Den richtigen Umgang oder irgendetwas im Allgemeinen dazu wurde an der TH nie (verständlich) beigebracht sondern immer einfach vorrausgesetzt
+    \item Beim selber erlernen bringt man sich aus Zeitgründen nur das nötigste bei, um die Aufgaben erfüllen zu können. Wenn es danach nicht mehr gebraucht wird wird das Gelernte wieder vergessen.
+    \item Man geht in der Hochschule quasi nie über das Klonen und Pushen hinaus.
+    \item Wozu reines Git wenn es Github gibt
+    \item Nur mit minimalen funktionen in bestimtmen kursen. Es wird nie regelmäßig verwendet, sodass ein regelmäßiger kontakt mit git entstanden ist
+    \item Wird in den Vorlesung nur kurz vorgestellt und dann soll man alles darüber wissen I guess...
+    \item nach einer Zeit wenn man es nicht mehr verwendet, ist das Wissen sehr darüber sehr schwammig. Und die Basis wieder nochmals aufzuholen, ist immer eine sehr hohe Hürde.
+    \item Bisher war es nie sonderlich zwingend, daher war die Motivation nicht sonderlich hoch. Und nach dem Benutzen (was selten war), habe ich alles wieder vergessen
+    \item nicht oft genug damit gearbeitet.
+\end{itemize}
+
+% Wünsche für Lernsystem
+\begin{figure}[h!]
+    \centering
+    \input{tikz/figWuensche}
+    \caption{Grafische Darstellung der Ergebnisse zur Frage: Wünsche an einem Lernsystem}
+\end{figure}
+
+Freitext: Sonstige Wünsche für ein Lernsystem
+\begin{itemize}
+    \setlength{\itemsep}{-1pt} 
+    \item simplere gestaltung
+    \item Visualisierungen!!
+    \item Einen gut verständlichen Einstieg der nicht überfordert und sich auf die Basics beschränkt mit aufbauend schwerer werdenden Lerninhalten
+    \item in kleiner abschließbare Module unterteilen, dass es nicht so ein großer Block ist
+    \item Active Recall, Spaced Repetition, Interleaving nicht nur einmal lernen, sondern im Kopf behalten.
+    \item das die Profs nicht von nicht vorhandenen Vorwissen ausgehen
+    \item Möglichkeit, online von zuhause jederzeit zugreifen zu können. Support bei Anwendungsproblemen, wenn Beispiele praktisch umgesetzt werden
+\end{itemize}
+
+% Interesse an einem Lernsystem
+\begin{figure}[h!]
+    \centering
+    \input{tikz/figInteresse}
+    \caption{Grafische Darstellung der Ergebnisse zur Frage: Interessen an einem Lernsystem}
+\end{figure}
+
+Freitext: Ja, aber...
+\begin{itemize}
+    \setlength{\itemsep}{-1pt} 
+    \item Nur falls ich es alleine nicht bereits checken sollte, sprich ich jetzt noch keine Erfahrung damit jemals gehabt hätte.
+    \item Gamificationinhalte sollten dennoch eine gewissen Seriosität haben
+    \item Es sollte generell standert in der lehre sein und ein einheitlciehs sytsem geben
+    \item nur wenn auch tiefgehendere Lerninhalte vermittelt werden
+    \item nur solange es nicht zu langatmig ist und die lernkurve steilgenug ist.
+    \item Aktuell ist der Bedarf bei mir nicht mehr groß. Am Anfang des Studiums sehr gern
+    \item es müsste Effizient wissen beibringen und meinen wissensstand berücksichtigen. sodass man nicht gelangweilt wird
+\end{itemize}
+
+Freitext: Nein, aber...
+\begin{itemize}
+    \setlength{\itemsep}{-1pt} 
+    \item würde das System auch tiefgehende Konzepte umfassen, hätte ich durchaus Interesse
+    \item hätte es evtl genutzt vor ein paar Jahren, als ich es gelernt hatte, wenn es zügig den Stoff behandelt.
+\end{itemize}
+
+\parbox{\linewidth}{
+    Zum Schluss der Umfrage, wurde Teilnehmenden noch einmal die Möglichkeit gegeben, generelle Anmerkungen zur Umfrage oder zum Thema zu geben. Hierzu wurde ein einzelnes Freitextfeld bereitgestellt.
+
+    \begin{itemize}
+        \setlength{\itemsep}{-1pt} 
+        \item Gamification für eine bessere Zukunft.
+        \item Vielleicht ist für Anfänger auch wichtig zu verstehen, was anders an Git im Vergleich z.B. zu SVN oder Perforce/Helix Core ist.
+        \item Etwas verwirrt hat mich, dass bei der Frage ``Git Kenntnisse'' das Verwenden von Branches auf die selbe Erfahrungsstufe gesetzt wird wie Git ``vollständig'' verstanden zu haben, wobei ich Branches eher bei den Git Grundlagen verordnen würde. Von daher war ich mir nicht ganz sicher wo ich mich auf der Skala einordnen soll
+        \item Sollte unbedingt im Rahmen eines Pflichtkurs der Informatik eingehender behandelt werden. Mehr als, wie man ein commit macht, wurde leider nie erklärt. Ganz zu schweigen was ein Branch ist und wie man die handelt mit bspw. mehreren Projektteilnehmern.
+        \item Ich finde es toll, dass eine Umfrage zu diesem Thema gemacht wird und hoffe, das Lernsystem zum Lernen von GIT noch kennenlernen zu dürfen. :)
+        \item While I don't have a particularly deep understanding of git, I feel comfortable enough with my basic knowledge. So even though I rated my knowledge of git and GitHub rather low, it's always been enough for me.
+    \end{itemize}
+}
+
+%
+\include{content/chapDeclaration}
+%
+%
+\end{document}

@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+    \begin{axis}[
+        x tick label style={
+            /pgf/number format/1000 sep=},
+        ylabel=Anzahl Studierender mit dem Betriebssystem,
+        enlarge x limits=1,
+        ymax=60,
+        ymin=0,
+        legend style={at={(0.5,-0.03)},
+        anchor=north,legend columns=1},
+        ybar,
+        bar width=20pt,
+        xtick=\empty,
+        xticklabels={},
+        nodes near coords,
+        grid=major,
+    ]
+    
+    \addplot coordinates {(1,24)}; % macOS
+    \addplot coordinates {(2,56)}; % Windows
+    \addplot coordinates {(3,1)}; % Linux
+    
+    \legend{MacOS, Microsoft Windows, Linux}
+    \end{axis}
+\end{tikzpicture}
