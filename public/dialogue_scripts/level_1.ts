@@ -25,7 +25,7 @@ export const chapter_1_1: Level = {
             content : "Für den Zweck dieses Tutorial verwenden wir einen Platzhalter Link den du gleich kopieren kannst."
         },
         {
-            content : "Normalerweise findest du den Download Link auf der Github Seite des jeweiligen Repos unter <> Code."
+            content : "Normalerweise findest du den Download Link auf der Github Seite des jeweiligen Repos. Mehr hierzu findest du unter Info!"
         },
         {
             content : "Versuchen wir einmal dieses Repo über die Konsole zu klonen!",

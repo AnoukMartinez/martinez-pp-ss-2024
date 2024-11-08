@@ -15,13 +15,12 @@ const emit = defineEmits(['input-required', 'no-input-required', 'all-lines-read
 const currentIndex = ref(0);
 
 function renderNextLine() {
-  // If line index is greater than number of lines, keep current line
-  if(currentIndex.value >= props.dialogue_lines.length - 1) {
+  const amount_all_lines = props.dialogue_lines.length - 1
+  if(currentIndex.value >= amount_all_lines) {
     emit('all-lines-read')
     return
   }
 
-  // Das ist der schrecklichste Code den ich jemals geschrieben habe.
   if(currentIndex.value < props.dialogue_lines.length - 1) {
     const nextLine = props.dialogue_lines[currentIndex.value + 1]
     if(nextLine.content == "Versuchen wir einmal dieses Repo über die Konsole zu klonen!") {
@@ -49,7 +48,6 @@ function renderPreviousLine() {
 }
 
 watch(currentIndex, (newIndex) => {
-  // Sende einen emit je nachdem ob in der Line eine Eingabe getätigt werden soll, oder nicht
   const current_line_flag = props.dialogue_lines[newIndex]?.required_flag;
   if (current_line_flag !== undefined && current_line_flag !== props.lastSolvedFlag) {
     emit('input-required');

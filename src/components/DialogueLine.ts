@@ -41,8 +41,6 @@ export interface Level {
 }
 
 export interface Tutorial {
-  // Momentan sind Tutorials darauf ausgelegt, nur ein Text/Bild zu haben
-  // In Zukunft könnten diese allerdings mit string arrays ersetzt werden
   tutorial_content : string;
   tutorial_image_path : string;
 }

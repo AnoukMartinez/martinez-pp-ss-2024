@@ -48,8 +48,6 @@ function handleAllDialogueLinesRead() {
 }
 
 function checkEndOfLevel() {
-  // currentFlagIndex.value muss + 1 gerechnet werden um Länge zu entsprechen.
-  // Ich mag diese Lösung nicht wirklich, aber es funktioniert im Moment nur so.
   if(currentFlagIndex.value + 1 == props.level.flags.length && allDialogueLinesRead.value) {
     endLevel()
   }

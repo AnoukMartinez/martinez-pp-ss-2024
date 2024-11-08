@@ -1,4 +1,4 @@
-import { Level, DialogueLine, Flag, Preview, FlagKeywords } from '../../src/components/DialogueLine.ts'
+import { Level, FlagKeywords } from '../../src/components/DialogueLine.ts'
 
 export const chapter_0_1: Level = {
     main_chapter: 0,
@@ -6,7 +6,7 @@ export const chapter_0_1: Level = {
     title: "Tutorial",
     dialogue_lines: [
         {
-            content: "Hier ist ein kleines, noch nicht fertiges Tutorial."
+            content: "Hier ist ein kleines Tutorial."
         },
         {
             content: "In diesem Spiel werden wir verschiedene Git Kommandos vorstellen."
@@ -21,6 +21,9 @@ export const chapter_0_1: Level = {
         },
         {
             content: "Wenn du einmal feststeckst, kannst dir links auf dem Skript Button alle Texte in diesem Level ansehen."
+        },
+        {
+            content: "Auf dem Info Button kannst du dir zusätzliche Informationen und Visualisierungen zu einem Kommando ansehen."
         },
         {
             content: "Wenn du merkst, dass du ein Kommando schon kennst, kannst du entweder das aktuelle Level mit dem Skip Button überspringen, oder auf Levels ein anderes Level auswählen."

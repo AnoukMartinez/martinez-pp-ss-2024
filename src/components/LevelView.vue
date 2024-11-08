@@ -30,10 +30,6 @@ onMounted(() => {
 
   const matchesParameters = (level) => level.main_chapter === paramLevel.value && level.sub_chapter === paramChapter.value;
   currentIndex.value = levels.findIndex(matchesParameters);
-
-  if(currentIndex.value == -1) {
-    // Falls Level nicht gefunden wird rufe Platzhalter Seite, TODO
-  }
 });
 
 </script>
